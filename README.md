@@ -14,6 +14,7 @@
 
 | Feature | English | 中文 |
 |---|---|---|
+| Browse / 检字 | A compact character grid with a left sidebar; browse by untoned pinyin or familiar radicals. | 左侧侧栏配合汉字网格，支持无声调拼音与常见部首检字。 |
 | Character forms / 字形 | Four stages with period labels; unavailable glyphs are marked explicitly. | 四种字形及年代标注，缺失字形明确提示。 |
 | Modern pronunciation / 现代读音 | Mandarin pinyin, including separate surname readings where supplied. | 普通话拼音；数据包含时单独显示姓氏读音。 |
 | Explanations / 讲解 | English translations of every included *Shuowen* entry, character-form notes, and source metadata. Chinese originals can be expanded for comparison. | 全部收录《说文》释文、字形说明及来源信息支持中英切换，中文原文可展开对照。 |
@@ -52,9 +53,9 @@ English translations were drafted with a language model, checked for complete en
 
 ## Local use / 本地使用
 
-Download the repository with its directory structure intact and open `index.html` in a browser. Keep the bundled translation data, scripts, `seal.woff2`, and `orac.woff2` beside the page at their original paths. Core lookup, language switching, animation, and export use local assets. Visitor statistics contact external services on hosted HTTP(S) pages; local `file://` pages skip those requests.
+Download the repository with its directory structure intact and open `index.html` in a browser. Keep the bundled translation data, `browse-data.js`, scripts, `seal.woff2`, and `orac.woff2` beside the page at their original paths. Core lookup, browsing, language switching, animation, and export use local assets. Visitor statistics contact external services on hosted HTTP(S) pages; local `file://` pages skip those requests.
 
-下载完整仓库并保持目录结构，在浏览器中打开 `index.html`。保留随附的翻译数据、脚本及 `seal.woff2`、`orac.woff2` 的原有路径。查字、语言切换、动画与导出使用本地资源；HTTP(S) 托管页面的访问统计会请求外部服务，本地 `file://` 页面跳过这些请求。
+下载完整仓库并保持目录结构，在浏览器中打开 `index.html`。保留随附的翻译数据、`browse-data.js`、脚本及 `seal.woff2`、`orac.woff2` 的原有路径。查字、检字、语言切换、动画与导出使用本地资源；HTTP(S) 托管页面的访问统计会请求外部服务，本地 `file://` 页面跳过这些请求。
 
 ## Publishing / 发布
 
@@ -74,6 +75,7 @@ Publishing source: the `main` branch, repository root (`/`). Future pushes to `m
 | Oracle-bone glyphs / 甲骨文字形 | [Oracular 鏡原甲骨文](https://oracular.azurewebsites.net/), Peichao Qin | SIL OFL-1.1 |
 | *Shuowen* text, pinyin, and metadata / 《说文》原文、拼音与元信息 | [shuowen.org](http://www.shuowen.org/) | Apache-2.0 |
 | Simplified/traditional mappings / 简繁映射 | [OpenCC](https://github.com/BYVoid/OpenCC) | Apache-2.0 |
+| Offline browse readings, modern radical index, and simplified display forms / 离线检字读音、现代部首索引与简体展示字 | [Unicode 18.0.0 Unihan](https://www.unicode.org/Public/18.0.0/ucd/Unihan.zip) | [Unicode-3.0](licenses/Unicode-3.0.txt) |
 
 Retain [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the relevant licence notices when redistributing the page or its exports. The code uses the [MIT licence](LICENSE), including the original author’s copyright notice.
 
@@ -84,3 +86,19 @@ Retain [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the relevant licence
 Static HTML, CSS, and JavaScript with bundled character and translation data; no application framework or runtime package installation. Glyphs use subsetted WOFF2 fonts. JPG rendering uses Canvas; GIF export uses the included GIF89a encoder.
 
 静态 HTML、CSS、JavaScript 与随附字形、翻译数据，无应用框架，无需安装运行依赖。字形使用子集化 WOFF2 字体；JPG 通过 Canvas 绘制，GIF 使用项目内置 GIF89a 编码器。
+
+The browse index is generated with Python 3 and the standard library:
+
+检字索引可用 Python 3 标准库重新生成：
+
+```sh
+python scripts/build-browse-data.py
+```
+
+The script downloads the fixed Unicode 18.0.0 archive and Unicode V3 licence from unicode.org, with timeout and size limits. It writes `browse-data.js` and the bundled licence; visitors never download Unihan. The candidate set combines the existing dictionary, simplified/traditional mappings, available fonts, and General Standard Chinese Characters (`kTGH`), restricted to U+4E00–U+9FFF. The full standard list includes characters outside this site's basic-Han range; those remain outside the browse index. Modern standard characters retain their own forms; other entries merge only when there is one supported simplified target. Results follow the official `kTGH` order, then code point. Adding a modern lookup entry does not create historical glyphs or a *Shuowen* explanation; missing material is still marked as unavailable.
+
+脚本从 unicode.org 读取固定的 Unicode 18.0.0 数据与 Unicode V3 许可，设有超时及大小上限，只写出 `browse-data.js` 与随附许可；访客端不会下载 Unihan。候选字合并现有字典、简繁映射、字体字头与通用规范汉字（`kTGH`），限 U+4E00–U+9FFF。规范字全表中属于扩展区的字仍不纳入。规范汉字保留自身，其他字仅在存在唯一受支持简化字时合并。结果按官方 `kTGH` 序号、再按码位排序。新增现代检索条目不会补造古字形或《说文》释文，缺失内容仍明确提示不可用。
+
+Browse readings choose `kTGHZ2013` → `kXHC1983` → `kMandarin` for each character. Familiar radical labels use `kRSUnicode` and a curated set of 100 named groups, keeping moon/flesh and left/right ear groups separate. These lookup fields are independent of historical *Shuowen* explanations and groupings.
+
+检字读音逐字依次采用 `kTGHZ2013` → `kXHC1983` → `kMandarin`。常见部首使用 `kRSUnicode` 与人工选取的 100 组名称，月与肉、左耳旁与右耳旁分别索引。这些检索字段与《说文》的历史释文、分部分别保留。
