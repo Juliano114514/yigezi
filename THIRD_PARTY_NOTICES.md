@@ -40,7 +40,17 @@ The character glyphs, original dictionary text, modern pinyin, and character map
 - Source / 来源：[OpenCC](https://github.com/BYVoid/OpenCC).
 - Licence / 授权：**Apache License 2.0**。
 
-## 4. Code and attribution / 代码与显名
+## 4. Offline browse index / 离线检字索引
+
+- Source / 来源：[Unicode 18.0.0 Unihan Database](https://www.unicode.org/Public/18.0.0/ucd/Unihan.zip), Unicode, Inc.; documentation / 字段说明：[UAX #38](https://www.unicode.org/reports/tr38/tr38-41.html).
+- Licence / 授权：**Unicode License V3 (Unicode-3.0)**; the full licence is retained in [Unicode-3.0.txt](licenses/Unicode-3.0.txt).
+- Copyright / 版权：© 1991–2026 Unicode, Inc.
+- Retained fields / 使用字段：`kTGH`, `kTGHZ2013`, `kXHC1983`, `kMandarin`, `kSimplifiedVariant`, and `kRSUnicode`.
+- `browse-data.js` is a project-generated subset covering the existing dictionary/font headwords and the General Standard Chinese Characters represented in the site's supported basic-Han range U+4E00–U+9FFF. Readings use `kTGHZ2013`, falling back to `kXHC1983`, then `kMandarin`; readings from different fields are not combined. / `browse-data.js` 是以现有字典、字形字头及 U+4E00–U+9FFF 基本汉字范围内的通用规范汉字生成的子集。读音依次采用 `kTGHZ2013`、`kXHC1983`、`kMandarin`，不合并不同字段的读音。
+- The familiar radical names, variant labels, selection, and index layout are project additions. Radical groups use Unicode radical IDs; they do not claim that every result contains a component at the same position. Historical *Shuowen* groupings remain separate from the browse index. / 常见部首名称、变体标签、筛选范围与索引编排为本项目补充。部首分组使用 Unicode 部首编号，不表示每个结果都在相同位置含有该偏旁；《说文》历史分部与检字索引分别保留。
+- Preserve the Unicode copyright and permission notice when redistributing this data or derived copies. / 再分发本数据或其衍生副本时，保留 Unicode 版权与许可声明。
+
+## 5. Code and attribution / 代码与显名
 
 The project code is distributed under the [MIT licence](LICENSE). The original `Copyright (c) 2026 Ivan666jjj` notice is retained. The licences above govern their respective data and fonts independently of the project code licence.
 
