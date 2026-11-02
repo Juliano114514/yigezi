@@ -24,6 +24,7 @@ function lookup(raw) {
   return {
     s: simple, t: traditional, sameT: simple === traditional,
     sw: SW[traditional] || SW[simple] || null,
+    pinyin: BROWSE_DATA.records[simple]?.p.join(' · ') || (SW[traditional] || SW[simple])?.p || '',
     sealChar: HAS_SEAL.includes(traditional) ? traditional : (HAS_SEAL.includes(simple) ? simple : null),
     oracChar: HAS_ORAC.includes(traditional) ? traditional : (HAS_ORAC.includes(simple) ? simple : null)
   };
@@ -42,7 +43,7 @@ function render(raw) {
   const head = element('div', 'head');
   head.append(element('span', 'zi', record.s));
   if (!record.sameT) head.append(element('span', 'trad', record.t));
-  if (sw.p) head.append(element('span', 'py', sw.p));
+  if (record.pinyin) head.append(element('span', 'py', record.pinyin));
   head.append(element('span', 'tag', t(record.oracChar ? 'allForms' : (record.sealChar ? 'hasSeal' : 'modernOnly'))));
 
   const timeline = element('div', 'stages');
@@ -66,7 +67,7 @@ function render(raw) {
   }
 
   const phonetics = element('div', 'phon'), modern = element('div');
-  modern.append(element('label', '', t('modernPronunciation')), element('span', sw.p ? '' : 'na', sw.p || '—'));
+  modern.append(element('label', '', t('modernPronunciation')), element('span', record.pinyin ? '' : 'na', record.pinyin || '—'));
   const surname = SURNAME[record.s] || SURNAME[record.t];
   if (surname) modern.append(element('em', 'sn', t('surnameReading', { reading: surname })));
   phonetics.append(modern);
@@ -149,11 +150,11 @@ function setLanguage(language) {
   try { localStorage.setItem('yigezi.language', language); } catch (_) {}
   updateStaticText();
   refreshExportHint();
-  render($('#q').value);
+  renderView({ preserveScroll: true });
   window.dispatchEvent(new Event('languagechange'));
 }
 
-function applyTheme(theme) {
+function applyTheme(theme, syncRoute = true) {
   if (!Object.prototype.hasOwnProperty.call(THEMES, theme)) return;
   THEME = theme;
   for (const [name, value] of Object.entries(THEMES[theme])) document.documentElement.style.setProperty('--' + name, value);
@@ -162,17 +163,11 @@ function applyTheme(theme) {
     button.classList.toggle('on', active);
     button.setAttribute('aria-pressed', String(active));
   });
+  if (syncRoute && browseReady) syncBrowseTheme();
 }
 
 function loadHash() {
-  let hash;
-  try { hash = decodeURIComponent(location.hash); } catch (_) { hash = location.hash; }
-  const character = hash.match(/(?:^#|[&;])z=([\u4e00-\u9fff])/);
-  const theme = hash.match(/(?:^#|[&;])t=(paper|rubbing|classic)(?:$|[&;])/);
-  if (character) $('#q').value = character[1];
-  else if (/(?:^#|[&;])z=/.test(hash)) $('#q').value = '';
-  if (theme) applyTheme(theme[1]);
-  render($('#q').value);
+  loadBrowseRoute();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -180,16 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#exp-jpg').onclick = exportJPG;
   $('#exp-gif').onclick = exportGIF;
   $('#exp-batch').onclick = exportBatch;
-  $('#q').addEventListener('input', event => render(event.target.value));
+  const inputCharacter = event => {
+    if (event.isComposing) return;
+    const character = $('#q').value.match(/[\u4e00-\u9fff]/)?.[0];
+    if (character) openCharacter(character, true);
+    else if (!$('#q').value) navigateBrowse({ view: 'all', filter: '', page: 1 }, { focus: false, scroll: false });
+    else navigateBrowse({ view: 'invalid', raw: $('#q').value }, { replace: isCharacterView(), focus: false, scroll: false });
+  };
+  $('#q').addEventListener('input', inputCharacter);
+  $('#q').addEventListener('compositionend', inputCharacter);
   for (const character of QUICK) {
     const button = element('button', '', character);
     button.type = 'button';
-    button.onclick = () => { $('#q').value = character; render(character); };
+    button.onclick = () => openCharacter(character);
     $('#quick').append(button);
   }
   document.querySelectorAll('.theme-btn').forEach(button => { button.onclick = () => applyTheme(button.dataset.k); });
   document.querySelectorAll('.lang-btn').forEach(button => { button.onclick = () => setLanguage(button.dataset.lang); });
   updateStaticText();
+  initBrowse();
   loadHash();
-  window.addEventListener('hashchange', loadHash);
 });

@@ -170,17 +170,17 @@ function drawCard(context, width, height, record, scale, active = -1, options = 
     context.fillText(record.t, x, 148);
     x += context.measureText(record.t).width + 20;
   }
-  if (sw.p) {
+  if (record.pinyin) {
     context.fillStyle = theme.mut;
     context.font = '28px Georgia,"Songti SC",serif';
-    context.fillText(sw.p, x, 148);
+    context.fillText(record.pinyin, x, 148, 976 - x);
   }
   context.font = '18px Georgia,"Songti SC",serif';
   context.fillStyle = theme.mut;
   const surname = typeof SURNAME !== 'undefined' && (SURNAME[record.s] || SURNAME[record.t]);
-  const pronunciation = exportText('modernPronunciation', {}, snapshot) + ': ' + (sw.p || '—');
-  context.fillText(pronunciation, 104, 192);
-  if (surname) context.fillText(exportText('surnameReading', { reading: surname }, snapshot), 594, 192);
+  const pronunciation = exportText('modernPronunciation', {}, snapshot) + ': ' + (record.pinyin || '—');
+  context.fillText(pronunciation, 104, 192, surname ? 470 : 872);
+  if (surname) context.fillText(exportText('surnameReading', { reading: surname }, snapshot), 594, 192, 382);
   context.strokeStyle = theme.line;
   context.beginPath();
   context.moveTo(104, 220);

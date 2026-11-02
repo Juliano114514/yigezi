@@ -8,8 +8,10 @@
 <script>document.documentElement.className='js';</script>
 <link rel="stylesheet" href="styles.css">
 <script src="characters.js" defer></script>
+<script src="browse-data.js" defer></script>
 <script src="i18n.js" defer></script>
 <script src="app.js" defer></script>
+<script src="browse.js" defer></script>
 <script src="exports.js" defer></script>
 <script src="stats.js" defer></script>
 </head>
@@ -24,22 +26,47 @@
     <div class="sub" data-i18n="subtitle">Oracle bone · Small seal · Traditional · Simplified</div>
     <div class="stat" id="collection">10249 seal forms · 1425 oracle-bone forms · 7699 Shuowen entries</div>
   </header>
-  <div class="search"><input id="q" value="马" maxlength="6" placeholder="Enter a character" aria-label="Look up a Chinese character" autocomplete="off" spellcheck="false"></div>
-  <div class="quick" id="quick"></div>
-  <div class="toolbar">
-    <button id="play" type="button" data-i18n="play">Play evolution</button>
-    <button id="exp-jpg" type="button" data-i18n="jpg">Save image</button>
-    <button id="exp-gif" type="button" data-i18n="gif">Save animation</button>
-    <button id="exp-batch" type="button" data-i18n="batch">Batch export</button>
-    <span class="themes" role="group" aria-label="Color theme">
-      <button class="theme-btn on" type="button" data-k="paper" aria-pressed="true" data-i18n="themePaper">Rice paper</button>
-      <button class="theme-btn" type="button" data-k="rubbing" aria-pressed="false" data-i18n="themeRubbing">Ink rubbing</button>
-      <button class="theme-btn" type="button" data-k="classic" aria-pressed="false" data-i18n="themeClassic">Old manuscript</button>
-    </span>
-    <div class="hint" id="exphint" role="status" aria-live="polite" data-i18n="hint">Oracle bone → Small seal → Traditional → Simplified</div>
-  </div>
-  <noscript><div class="envwarn"><span data-i18n="noJavaScript">JavaScript is not running. This preview shows one example only. Open this file in a browser to search, switch languages, and export, or visit the online version.</span> <a href="https://juliano114514.github.io/yigezi/">juliano114514.github.io/yigezi</a></div></noscript>
-  <article class="card" id="card" aria-label="Character explanation">
+  <div class="workspace">
+    <aside id="sidebar" class="sidebar">
+      <button id="browse-toggle" type="button" aria-expanded="false" aria-controls="browse-nav" data-i18n="browseMenu">Browse</button>
+      <nav id="browse-nav" aria-label="Character lookup">
+        <button id="nav-all" class="browse-nav-item" type="button" data-i18n="browseAll">All characters</button>
+        <button id="nav-pinyin" class="browse-nav-item" type="button" data-i18n="browsePinyin">Pinyin</button>
+        <button id="nav-radical" class="browse-nav-item" type="button" data-i18n="browseRadical">Radicals</button>
+        <div id="pinyin-index" hidden></div>
+        <div id="radical-index" hidden></div>
+      </nav>
+    </aside>
+    <div class="content">
+      <div class="content-controls">
+        <div class="search"><input id="q" value="" maxlength="6" placeholder="Enter a character" aria-label="Look up a Chinese character" autocomplete="off" spellcheck="false"></div>
+        <span class="themes" role="group" aria-label="Color theme">
+          <button class="theme-btn on" type="button" data-k="paper" aria-pressed="true" data-i18n="themePaper">Rice paper</button>
+          <button class="theme-btn" type="button" data-k="rubbing" aria-pressed="false" data-i18n="themeRubbing">Ink rubbing</button>
+          <button class="theme-btn" type="button" data-k="classic" aria-pressed="false" data-i18n="themeClassic">Old manuscript</button>
+        </span>
+      </div>
+      <div class="quick" id="quick"></div>
+      <section id="browse-results" aria-labelledby="results-title" hidden>
+        <div class="results-head">
+          <h2 id="results-title" tabindex="-1"></h2>
+          <span id="results-count" role="status" aria-live="polite"></span>
+        </div>
+        <div id="character-grid" class="character-grid"></div>
+        <p id="browse-empty" class="browse-empty" data-i18n="browseEmpty" hidden>No characters found.</p>
+        <div id="pagination" class="pagination"></div>
+      </section>
+      <div id="detail-view">
+        <button id="back-to-results" class="back-to-results" type="button" data-i18n="browseBack" hidden>Back to characters</button>
+        <div class="toolbar">
+          <button id="play" type="button" data-i18n="play">Play evolution</button>
+          <button id="exp-jpg" type="button" data-i18n="jpg">Save image</button>
+          <button id="exp-gif" type="button" data-i18n="gif">Save animation</button>
+          <button id="exp-batch" type="button" data-i18n="batch">Batch export</button>
+          <div class="hint" id="exphint" role="status" aria-live="polite" data-i18n="hint">Oracle bone → Small seal → Traditional → Simplified</div>
+        </div>
+        <noscript><div class="envwarn"><span data-i18n="noJavaScript">JavaScript is not running. This preview shows one example only. Open this file in a browser to search, switch languages, and export, or visit the online version.</span> <a href="https://juliano114514.github.io/yigezi/">juliano114514.github.io/yigezi</a></div></noscript>
+        <article class="card" id="card" aria-label="Character explanation">
     <div class="head"><span class="zi">马</span><span class="trad">馬</span><span class="py">mǎ</span><span class="tag">All four forms</span></div>
     <div class="stages" id="tl">
       <div class="stage"><div class="art"><span class="fonty glyphwrap" style="font-family:Orac">馬</span></div><div class="lab">Oracle bone</div><div class="era">Shang dynasty</div></div>
@@ -49,7 +76,10 @@
     </div>
     <div class="phon"><div><label>Modern Mandarin</label><span>mǎ</span></div></div>
     <section class="shuowen"><div class="explanation-label">English translation of the historical account</div><div class="q">A spirited, martial animal. The form depicts a horse’s head, mane, tail, and four legs. Characters classified under 馬 use 馬 as their component.</div><details class="original"><summary>Read the original Chinese</summary><p class="original-text" lang="zh-Hant">怒也。武也。象馬頭髦尾四足之形。凡馬之屬皆从馬。</p></details><div class="src">Shuowen Jiezi · Volume 10 · Variant forms: 𢒠𢒧</div></section>
-  </article>
+        </article>
+      </div>
+    </div>
+  </div>
   <footer>
     <p data-i18n="footerFonts">Scalable glyph fonts: Shuowen Seal (Kaiyuan Small Seal, OFL-1.1; CNS11643, OGDL-Taiwan-1.0) and Oracular by Peichao Qin (OFL-1.1).</p>
     <p data-i18n="footerData">Historical explanations and modern pinyin: shuowen.org. Simplified–traditional mappings: OpenCC. Both sources are distributed under Apache-2.0.</p>
