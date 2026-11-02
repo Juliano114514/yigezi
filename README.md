@@ -1,104 +1,72 @@
 # The Life of a Character · 一个字的一生
 
-**Oracle bone → Small seal → Traditional → Simplified** — explore Chinese character forms, modern Mandarin pronunciation, and the *Shuowen Jiezi* in English or Chinese.
+An offline, bilingual character and vocabulary reference. Browse modern teaching characters, explore historical forms, and compare Xu Shen's original Shuowen Jiezi account with an English reading aid.
 
-**甲骨文 → 小篆 → 繁体 → 简体** —— 用英语或中文了解汉字字形、现代普通话读音和《说文解字》。
+离线中英双语字目与词表。按罕度、拼音或《说文》部首检索，查看历史字形、许慎原文及英文辅助译文。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-yigezi-success)](https://juliano114514.github.io/yigezi/)
-[![GitHub stars](https://img.shields.io/github/stars/Juliano114514/yigezi?style=social)](https://github.com/Juliano114514/yigezi/stargazers)
+[Open the site / 打开网站](https://juliano114514.github.io/yigezi/) · [Sources and licences / 来源与许可](THIRD_PARTY_NOTICES.md)
 
-[Open the site / 打开网站](https://juliano114514.github.io/yigezi/#z=江) · [Repository / 仓库](https://github.com/Juliano114514/yigezi)
+## Browse / 使用
 
-## Features / 功能
+- **Character index / 字目**: supported headwords with modern pinyin and rarity. Browse by rarity 0–2, pinyin, or Xu Shen's radicals.
+- **Word list / 词表**: 15,585 entries at word rarity 0–2. Search Hanzi, accented/unaccented pinyin, or English, combine query terms, and open a constituent character.
+- **Navigation / 导航**: 80 results per page. Returning from a character restores the originating view, query, rarity selection, page, and scroll. “All” clears rarity selections.
+- **Shuowen / 说文**: all 540 historical radical definitions are retained as metadata. The directory shows groups containing supported characters in original order by volume; entries without an evidenced classification form a separate group.
+- **Related entries / 相关条目**: distinguish 后/後 and 發/髮. 明 links to 朙 and retains its variant explanation. The active entry controls the explanation, historical form, and export.
+- **Construction / 构形**: emphasize explicit 从X, X聲, X亦聲, and X省聲 with text labels. Complex clauses remain as original text; search components are not treated as evidence of semantic or phonetic roles.
+- **Language and themes / 语言与主题**: English opens by default, then reuses a saved preference. Three palettes retain Paper, Rubbing, and Classic theme keys. Information text is at least 14px and explanations are 18px.
+- **Export / 导出**: JPG cards and animated GIFs, individually or in batches of up to 100, using the captured language, theme, selected source entry, rarity, and construction text.
 
-| Feature | English | 中文 |
+## Rarity and support / 罕度与收录边界
+
+Character and word rarity are different editorial scales, not a single frequency ranking or an official school-stage certification.
+
+字罕度和词罕度采用不同编辑口径，不能混作统一字频排名或官方学段认证。
+
+| Level / 等级 | Character baseline / 字目基准 | Word-list meaning / 词表含义 |
 |---|---|---|
-| Browse / 检字 | A compact character grid with a left sidebar; browse by untoned pinyin or familiar radicals. | 左侧侧栏配合汉字网格，支持无声调拼音与常见部首检字。 |
-| Character forms / 字形 | Four stages with period labels; unavailable glyphs are marked explicitly. | 四种字形及年代标注，缺失字形明确提示。 |
-| Modern pronunciation / 现代读音 | Mandarin pinyin, including separate surname readings where supplied. | 普通话拼音；数据包含时单独显示姓氏读音。 |
-| Explanations / 讲解 | English translations of every included *Shuowen* entry, character-form notes, and source metadata. Chinese originals can be expanded for comparison. | 全部收录《说文》释文、字形说明及来源信息支持中英切换，中文原文可展开对照。 |
-| Language switch / 语言切换 | English opens by default. A saved language choice is reused on later visits. Controls, messages, help, and exported cards follow the selected language. | 默认英语，后续访问沿用保存的语言选择；控件、提示、帮助与导出卡片同步切换。 |
-| Themes / 配色 | Paper, Rubbing, and Classic. | 宣纸、碑拓、藏经。 |
-| Export / 导出 | JPG cards and animated GIFs, individually or in batches. | 支持单字或批量导出 JPG 图片、GIF 动图。 |
-| Sharing / 分享 | `#z=江` opens the requested character directly. | 通过 `#z=江` 直接打开指定汉字。 |
+| 0 | Historical 2,500 common characters / 旧表2,500常用字 | Primary school / 小学 |
+| 1 | Following 1,000 less-common characters / 旧表1,000次常用字 | Middle school / 初中 |
+| 2 | Other modern general-use characters and explicit editorial decisions / 其他现代通用字及冻结编辑决定 | High school / 高中 |
 
-The pronunciation section supports modern Mandarin only. English explanations are packaged with the site; visitors do not need a translation account or API key.
+The retained words contain **3,716 unique characters**, all supported. Required characters are capped at character rarity 2 for this edition, with adjustments recorded in the audit. Other existing headwords rated 3 or higher are removed from lookup, direct links, animation, and export.
 
-读音区只保留现代普通话。英文讲解随网站一并提供，访客无需翻译账号或 API Key。
+保留词条包含的 **3,716 个去重汉字全部支持**。按本期约定，必需字最终字罕度最高为2，覆盖调整单独记录。其余原有字头只保留最终罕度0–2，被删除字头不再支持查询、直达、动画或导出。
 
-## Coverage and interpretation / 收录与解读
+Traditional forms, historical variants, radicals, and rare characters in quotations remain source material, not independent supported headwords. Missing glyphs or explanations are marked unavailable.
 
-| Content / 内容 | Included / 收录数量 |
-|---|---:|
-| Small-seal glyphs / 小篆字形 | 10,249 |
-| Oracle-bone glyphs / 甲骨文字形 | 1,425 |
-| *Shuowen* entries with English translations / 《说文》条目及英文翻译 | 7,699 |
+繁体、重文、部首和原文罕字作为关联文献保留，不自动成为独立支持字头；缺失字形与释文明示不可用。
 
-Input supports basic Han characters in **U+4E00–U+9FFF**. The 2,116 dictionary headwords outside that range have been removed and are no longer supported as lookup entries. Rare characters occurring inside a retained quotation, variant form, or other metadata are preserved as part of the original source.
+The 1988 list is a historical project baseline, not the current official standard. Modern general-use candidates use Unicode 18.0.0 kTGH plus explicit editorial overrides. kTGH sequence numbers are not frequency ranks. The current edition retains **5,514 headwords** (2,500 at level 0, 1,000 at level 1, and 2,014 at level 2) and removes **5,556 previous headwords**. Decisions are model-assisted editorial judgements, not a human-certified frequency census. See frozen inputs, decisions, and hashes in [data](data/).
 
-输入支持 **U+4E00–U+9FFF 基本汉字**。范围外的 2,116 个字典字头已移除，不再支持查询。保留条目的原文引句、重文或其他元信息中出现的生僻字，仍作为原始文献内容保留。
+## Historical interpretation / 文献解读
 
-Missing data is shown as unavailable. These counts describe this edition’s dataset, rather than the total number of characters known to scholarship. The four stages offer a visual comparison; they do not establish a direct historical lineage for every glyph.
+The Shuowen is an Eastern Han historical source whose account can differ from later palaeographic research. Original Chinese and variant descriptions are preserved. Existing English translations are reading aids and have not received an independent scholarly review of every entry. Missing translations are identified explicitly.
 
-缺失数据会明确标出。以上数字仅指本版本的数据收录范围，不代表学术界所知字形总量。四阶段用于直观对照，不表示每个字形都已证实存在直接演变关系。
+《说文》为东汉文献，其说解可能与后世古文字研究不同。原文及重文说明保留；英文为辅助阅读材料，未逐条接受独立学术审校，缺译明确提示。
 
-The *Shuowen* is an Eastern Han work whose author did not have access to oracle-bone discoveries. Its explanations are historical evidence and can differ from modern palaeographic interpretations. The original text is preserved, including its descriptions of character components. English translations are reading aids and should be checked against the original for scholarly use.
+Historical data use shuowenjiezi/shuowen at fixed commit **6553a350763ce4feca2c5d1cc2cad7e594dc2975**. Source IDs, radicals, volumes, indexes, and variant explanations are retained, with links to [shuowen.org](https://www.shuowen.org/). A source search-index association is labelled separately from an explicit headword or variant relationship. Conservative identity corrections are recorded in [history-overrides.json](data/history-overrides.json), rather than silently treating every search hit as the same modern character.
 
-《说文》成书于东汉，作者未见后来出土的甲骨文，其解释具有文献价值，也可能与现代古文字研究不同。原文（包括构形描述）予以保留。英文翻译用于辅助阅读，学术使用请核对原文。
+## Offline use and regeneration / 离线使用与重建
 
-English translations were drafted with a language model, checked for complete entry coverage, and reviewed on selected entries. They have not received an independent scholarly review of every entry.
+Open index.html with its adjacent scripts, generated data, and fonts preserved. Core browsing, language switching, animation, and export need no server, package installation, translation service, or account. Visitor counts need a network connection on HTTP(S) pages; local file pages skip those requests.
 
-英文译文由语言模型起草，已检查条目覆盖完整性并抽样复核，尚未对每条译文进行独立的学术审校。
+保持页面、数据脚本和字体相邻后打开index.html；核心功能不依赖服务器、运行依赖安装、翻译服务或账号。HTTP(S)页面统计需要联网，本地文件跳过统计请求。
 
-## Local use / 本地使用
-
-Download the repository with its directory structure intact and open `index.html` in a browser. Keep the bundled translation data, `browse-data.js`, scripts, `seal.woff2`, and `orac.woff2` beside the page at their original paths. Core lookup, browsing, language switching, animation, and export use local assets. Visitor statistics contact external services on hosted HTTP(S) pages; local `file://` pages skip those requests.
-
-下载完整仓库并保持目录结构，在浏览器中打开 `index.html`。保留随附的翻译数据、`browse-data.js`、脚本及 `seal.woff2`、`orac.woff2` 的原有路径。查字、检字、语言切换、动画与导出使用本地资源；HTTP(S) 托管页面的访问统计会请求外部服务，本地 `file://` 页面跳过这些请求。
-
-## Publishing / 发布
-
-This edition is maintained in `Juliano114514/yigezi` and published at [juliano114514.github.io/yigezi](https://juliano114514.github.io/yigezi/). GitHub Pages serves the static files from this repository; no application server or translation service is required. Maintain asset links relative to the project path `/yigezi/`.
-
-本版本由 `Juliano114514/yigezi` 仓库维护，访问地址为 [juliano114514.github.io/yigezi](https://juliano114514.github.io/yigezi/)。GitHub Pages 直接托管仓库内的静态文件，无需应用服务器或在线翻译服务。资源链接须兼容项目路径 `/yigezi/`。
-
-Publishing source: the `main` branch, repository root (`/`). Future pushes to `main` automatically update the site. Keep `.nojekyll` in the root.
-
-发布来源为 `main` 分支的仓库根目录（`/`）；后续推送到 `main` 会自动更新网站。请保留根目录的 `.nojekyll`。
-
-## Sources and licences / 来源与许可
-
-| Data / 数据 | Source / 来源 | Licence / 许可 |
-|---|---|---|
-| Small-seal glyphs / 小篆字形 | [Kaiyuan Small Seal / 开元小篆](https://github.com/frankslin/kaiyuan-small-seal-font) + [CNS11643 / 全字库](https://www.cns11643.gov.tw) | OFL-1.1 / OGDL-Taiwan-1.0 |
-| Oracle-bone glyphs / 甲骨文字形 | [Oracular 鏡原甲骨文](https://oracular.azurewebsites.net/), Peichao Qin | SIL OFL-1.1 |
-| *Shuowen* text, pinyin, and metadata / 《说文》原文、拼音与元信息 | [shuowen.org](http://www.shuowen.org/) | Apache-2.0 |
-| Simplified/traditional mappings / 简繁映射 | [OpenCC](https://github.com/BYVoid/OpenCC) | Apache-2.0 |
-| Offline browse readings, modern radical index, and simplified display forms / 离线检字读音、现代部首索引与简体展示字 | [Unicode 18.0.0 Unihan](https://www.unicode.org/Public/18.0.0/ucd/Unihan.zip) | [Unicode-3.0](licenses/Unicode-3.0.txt) |
-
-Retain [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the relevant licence notices when redistributing the page or its exports. The code uses the [MIT licence](LICENSE), including the original author’s copyright notice.
-
-再分发页面或导出内容时，请保留 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 及相应许可声明。代码使用 [MIT 许可](LICENSE)，保留原作者版权声明。
-
-## Implementation / 技术说明
-
-Static HTML, CSS, and JavaScript with bundled character and translation data; no application framework or runtime package installation. Glyphs use subsetted WOFF2 fonts. JPG rendering uses Canvas; GIF export uses the included GIF89a encoder.
-
-静态 HTML、CSS、JavaScript 与随附字形、翻译数据，无应用框架，无需安装运行依赖。字形使用子集化 WOFF2 字体；JPG 通过 Canvas 绘制，GIF 使用项目内置 GIF89a 编码器。
-
-The browse index is generated with Python 3 and the standard library:
-
-检字索引可用 Python 3 标准库重新生成：
+Regenerate using Python 3 and the standard library:
 
 ```sh
 python scripts/build-browse-data.py
 ```
 
-The script downloads the fixed Unicode 18.0.0 archive and Unicode V3 licence from unicode.org, with timeout and size limits. It writes `browse-data.js` and the bundled licence; visitors never download Unihan. The candidate set combines the existing dictionary, simplified/traditional mappings, available fonts, and General Standard Chinese Characters (`kTGH`), restricted to U+4E00–U+9FFF. The full standard list includes characters outside this site's basic-Han range; those remain outside the browse index. Modern standard characters retain their own forms; other entries merge only when there is one supported simplified target. Results follow the official `kTGH` order, then code point. Adding a modern lookup entry does not create historical glyphs or a *Shuowen* explanation; missing material is still marked as unavailable.
+The generator uses frozen project inputs and explicit rarity decisions, not the neighbouring Android project. Runtime assets contain supported headwords and their associated historical records; visitors do not fetch dictionary data.
 
-脚本从 unicode.org 读取固定的 Unicode 18.0.0 数据与 Unicode V3 许可，设有超时及大小上限，只写出 `browse-data.js` 与随附许可；访客端不会下载 Unihan。候选字合并现有字典、简繁映射、字体字头与通用规范汉字（`kTGH`），限 U+4E00–U+9FFF。规范字全表中属于扩展区的字仍不纳入。规范汉字保留自身，其他字仅在存在唯一受支持简化字时合并。结果按官方 `kTGH` 序号、再按码位排序。新增现代检索条目不会补造古字形或《说文》释文，缺失内容仍明确提示不可用。
+生成器使用本项目冻结输入及分级决定，不依赖隔壁工程实时状态；运行数据包含支持字目及关联历史条目，访客无需联网下载字库。
 
-Browse readings choose `kTGHZ2013` → `kXHC1983` → `kMandarin` for each character. Familiar radical labels use `kRSUnicode` and a curated set of 100 named groups, keeping moon/flesh and left/right ear groups separate. These lookup fields are independent of historical *Shuowen* explanations and groupings.
+## Distribution / 分发
 
-检字读音逐字依次采用 `kTGHZ2013` → `kXHC1983` → `kMandarin`。常见部首使用 `kRSUnicode` 与人工选取的 100 组名称，月与肉、左耳旁与右耳旁分别索引。这些检索字段与《说文》的历史释文、分部分别保留。
+Code uses MIT; fonts, historical data, Unicode data, and vocabulary have separate licences. The supplied vocabulary is mixed-source material: retain provenance and applicable CC BY-SA notices. Do not relabel the complete dataset MIT or claim all underlying redistribution rights have been independently verified. Example sentences are not imported.
+
+代码采用MIT；字体、文献、Unicode数据和词表分别遵循各自许可。混合来源词表保留来源及适用CC BY-SA声明，不改标为纯MIT，也不宣称已独立确认全部公开再分发权。本期不导入例句。
+
+Existing GitHub Pages hosting uses the repository root on main. A push to that branch updates the site. Keep asset paths relative and retain .nojekyll.

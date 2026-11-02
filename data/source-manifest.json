@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "wordlist": {
+    "source": "Chinese Flashcard/wordlist.csv",
+    "sourceSha256": "6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a",
+    "sourceRows": 18500,
+    "selectedRows": 15585,
+    "selectedRarity": [
+      0,
+      1,
+      2
+    ],
+    "snapshot": "data/wordlist-source.csv",
+    "snapshotSha256": "c8adf3d0ce7dfe4665c50c5db1a9e1a75949435904827c07563239d99586ef10",
+    "fields": [
+      "词条ID",
+      "组词",
+      "拼音",
+      "英文释义",
+      "词性",
+      "罕度"
+    ],
+    "attribution": "CC-CEDICT contributors; CEDICT originally started by Paul Denisowski; Chinese Flashcard editorial stages",
+    "license": "CC-BY-SA-4.0 for CC-CEDICT-derived portions; mixed original source rights are not fully certified",
+    "excludedFields": [
+      "例句JSON",
+      "部件JSON",
+      "干扰词ID",
+      "本义解释JSON",
+      "引申义解释JSON"
+    ]
+  },
+  "shuowen": {
+    "revision": "6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "entryCount": 9833,
+    "sourceFilesDigest": "20de6c0bd30c8fe33066043b7f0cf139d7e6ae718b0806430798db03ce50ab96",
+    "source": "https://github.com/shuowenjiezi/shuowen/tree/6553a350763ce4feca2c5d1cc2cad7e594dc2975",
+    "licence": "Apache-2.0"
+  },
+  "snapshots": {
+    "wordlist-source.csv": "c8adf3d0ce7dfe4665c50c5db1a9e1a75949435904827c07563239d99586ef10",
+    "legacy-inputs.json": "2c429f680b78fd828dc3874ddc5d71340eebea2dea43314197d14becb6696c5d",
+    "modern-source.json": "20935716939ca47cd50fb7d811583acafcde7e473335a3476b4f9f5985ad20dc",
+    "common-characters.json": "563d9d80c4dd99a250f6e3000e4166f3aaa6ea16d0037d3fca233ea2625e6d4d",
+    "shuowen-source.json": "5fe28fac51dd1f5ecbbf7f2d8c25627ed4da0a19ac34795e8d6b7ea107f5eb92",
+    "translation-source.json": "1b8114a2e485b5c73ada22b16512b3288101dce20d28878b413a86a9e92c6886"
+  }
+}

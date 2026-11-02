@@ -1,0 +1,49 @@
+{
+  "sourceInputs": {
+    "wordlist-source.csv": "c8adf3d0ce7dfe4665c50c5db1a9e1a75949435904827c07563239d99586ef10",
+    "legacy-inputs.json": "2c429f680b78fd828dc3874ddc5d71340eebea2dea43314197d14becb6696c5d",
+    "modern-source.json": "20935716939ca47cd50fb7d811583acafcde7e473335a3476b4f9f5985ad20dc",
+    "common-characters.json": "563d9d80c4dd99a250f6e3000e4166f3aaa6ea16d0037d3fca233ea2625e6d4d",
+    "shuowen-source.json": "5fe28fac51dd1f5ecbbf7f2d8c25627ed4da0a19ac34795e8d6b7ea107f5eb92",
+    "translation-source.json": "1b8114a2e485b5c73ada22b16512b3288101dce20d28878b413a86a9e92c6886"
+  },
+  "editorialInputs": {
+    "rarity-overrides.json": "41a9f505523dbe0268a432124ca3ce12eff8f5c58828d9c1b9681ba40ce2084b",
+    "history-overrides.json": "472fc110fa550e0ce81e826ab0edb2ef69ad096df624e2b322a2fb321b4b27f2",
+    "shuowen-translation-overrides.json": "a164b23cc11aeb94935245564309fd7fab21f9db5d4c17102c9fc54b8a124959"
+  },
+  "outputs": {
+    "browse-data.js": {
+      "sha256": "2cac687d45962f0ef81315d2595883ae6a06a93c30ba2f86439673278b12b011",
+      "bytes": 604190
+    },
+    "wordlist-data.js": {
+      "sha256": "e72622df9cad34c8848f1c1f1f4236512765cf4566a92abfeb2fcb42522420d9",
+      "bytes": 2454666
+    },
+    "shuowen-data.js": {
+      "sha256": "d8f143b0318b4c09ec4fa55792df4073e7d43a7a5c6930e4d0db4f042eae8248",
+      "bytes": 1545262
+    },
+    "characters.js": {
+      "sha256": "2b58113d08b13f51a799c7cd45cb2df9a0c90a2d101639b37f5aed3afd5a0067",
+      "bytes": 63704
+    },
+    "data/character-rarity-review.csv": {
+      "sha256": "faae5c273d1bd925ba8941d5536c09bad516af9452ae55629ac712f822c842a8",
+      "bytes": 1834665
+    },
+    "data/character-removals.csv": {
+      "sha256": "82a3168c5057871c5ccdb9de78037cf73e64f151507e7c88d1c57fdc14185744",
+      "bytes": 939196
+    },
+    "data/history-links.json": {
+      "sha256": "a0efd3d3af6f835e69a5fce81ef4d9149443a2ab35a5833267f0e66faadd2f44",
+      "bytes": 488308
+    },
+    "data/catalog-report.json": {
+      "sha256": "4a8d4b386d8fc17ba8094a90923125b2b0fa89c72ab708cef5763884314187b2",
+      "bytes": 22006
+    }
+  }
+}

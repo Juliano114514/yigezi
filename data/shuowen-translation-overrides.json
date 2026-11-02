@@ -1,0 +1,652 @@
+{
+  "828": {
+    "e": "噓也。从口从欠。",
+    "eEn": "To breathe out. Formed from 口 and 欠.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "873": {
+    "e": "助也。从口从又。",
+    "eEn": "To assist. Formed from 口 and 又.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "933": {
+    "e": "不也。从口从不。",
+    "eEn": "No; not. Formed from 口 and 不.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "941": {
+    "e": "塞口也。从口，氒省聲。(氒，音厥。)",
+    "eEn": "To stop up the mouth. Formed from 口, with a reduced form of 氒 indicating the pronunciation. (氒 is pronounced like 厥.)",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "1657": {
+    "e": "誤也。从言，佳省聲。",
+    "eEn": "An error. Formed from 言, with a reduced form of 佳 indicating the pronunciation.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "3067": {
+    "e": "郭也。春分之音，萬物郭皮甲而出，故謂之鼓。从壴，支象其手擊之也。《周禮》六鼓：靁鼓八面，靈鼓六面，路鼓四面，鼖鼓、臯鼓、晉鼓皆兩面。凡鼓之屬皆从鼓。",
+    "eEn": "Expansion, expressed here as 郭. It is the sound of the spring equinox: all things break through their skins and shells to emerge, hence the name 鼓. Formed from 壴, with 支 depicting the hand striking it. The Rites of Zhou lists six drums: the thunder drum has eight faces, the spirit drum six, and the road drum four; the large drum (鼖鼓), gao drum (臯鼓), and jin drum (晉鼓) each have two faces. All characters in the 鼓 class are formed with 鼓.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "3848": {
+    "e": "游也。从出从放。",
+    "eEn": "To roam. Formed from 出 and 放.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "4785": {
+    "e": "兜鍪也。从冃由聲。",
+    "eEn": "A helmet. Formed from 冃, with 由 indicating the pronunciation.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "5537": {
+    "e": "所，謌也。从欠，噭省聲。讀若叫呼之叫。",
+    "eEn": "The text glosses this as \"所; singing.\" Formed from 欠, with a reduced form of 噭 indicating the pronunciation. Pronounced like 叫 in 叫呼.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "6684": {
+    "e": "樂也。从心豈聲。",
+    "eEn": "Joyful. Formed from 心, with 豈 indicating the pronunciation.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "9459": {
+    "e": "\t酋矛也。建於兵車，長二丈。象形。凡矛之屬皆从矛。",
+    "eEn": "The spear called 酋矛. It is mounted on a war chariot and is two zhang long. A pictograph. All characters in the 矛 class are formed with 矛.",
+    "reason": "Project English reading aid revised against the fixed official Chinese entry; not an independent scholarly review."
+  },
+  "206": {
+    "e": "𩆜巫。以玉事神。从玉霝聲。",
+    "eEn": "A 𩆜 shaman: one who serves the spirits with jade. Formed from 玉, with 霝 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "237": {
+    "e": "艸初生，其香分布。从屮从分，分亦聲。",
+    "eEn": "Plants first sprouting, their fragrance spreading around. Formed from 屮 and 分; 分 also indicates the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "284": {
+    "e": "𦵡藭，香艸也。从艸宮聲。",
+    "eEn": "The fragrant herb called 𦵡藭. Formed from 艸, with 宮 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "513": {
+    "e": "艸耑。从艸亾聲。",
+    "eEn": "The tip of a plant. Formed from 艸, with 亾 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "628": {
+    "e": "斷也。从斤斷艸。譚長說。",
+    "eEn": "To break or sever. The form shows 斤, an axe, cutting through 艸, plants. This is the explanation of Tan Chang.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "667": {
+    "e": "鳧葵也。从艸戼聲。《詩》曰：“言采其𦯆。”",
+    "eEn": "The aquatic plant called 鳧葵. Formed from 艸, with 戼 indicating the pronunciation. The Odes says: “Let us gather its 𦯆.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "760": {
+    "e": "耕也。从牛黎聲。",
+    "eEn": "To plough. Formed from 牛, with 黎 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1100": {
+    "e": "正、行也。从辵正聲。",
+    "eEn": "To go forward on a straight or proper course. Formed from 辵, with 正 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1105": {
+    "e": "往也。从辵且聲。䢐，齊語。",
+    "eEn": "To go. Formed from 辵, with 且 indicating the pronunciation. 䢐 is a term used in Qi.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1324": {
+    "e": "齒蠧也。从牙禹聲。",
+    "eEn": "Decay of the teeth. Formed from 牙, with 禹 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1371": {
+    "e": "歭䠧，不前也。从足屠聲。",
+    "eEn": "To hesitate without going forward, as in 歭䠧. Formed from 足, with 屠 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1425": {
+    "e": "管樂也。从龠虒聲。",
+    "eEn": "A wind instrument. Formed from 龠, with 虒 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1765": {
+    "e": "引也。从反廾。凡𠬜之屬皆从𠬜。(今變隸作大。)",
+    "eEn": "To pull or draw. Formed from an inverted 廾. All characters in the 𠬜 class are formed with 𠬜. The parenthetical note says that it has now changed in clerical writing to 大.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1850": {
+    "e": "秦名土釜曰𩰫。从鬲𡕒聲。讀若過。",
+    "eEn": "The name used in Qin for an earthenware cooking pot. Formed from 鬲, with 𡕒 indicating the pronunciation. Read like 過.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1863": {
+    "e": "五味盉羹也。从𩰲从羔。《詩》曰：“亦有和𩱧。”",
+    "eEn": "A soup in which the five flavors are harmonized. Formed from 𩰲 and 羔. The Odes says: “There is also well-seasoned soup.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1867": {
+    "e": "粉餅也。从𩰲耳聲。",
+    "eEn": "A cake made from flour. Formed from 𩰲, with 耳 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "1877": {
+    "e": "種也。从坴、丮。持亟種之。《書》曰：“我𡎐黍稷。”",
+    "eEn": "To plant. Formed from 坴 and 丮, depicting holding and planting. The clause 持亟種之 is retained as transmitted; the graph 亟 is unclear here. The Documents says: \"I plant millet and grain.\"",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "1952": {
+    "e": "从上擊下也。一曰素也。从殳𡉉聲。𡉉，苦江切。",
+    "eEn": "To strike downward from above. Another explanation is “plain” or “undyed” (素). Formed from 殳, with 𡉉 indicating the pronunciation. The reading of 𡉉 is given by the fanqie spelling 苦江切.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2000": {
+    "e": "𢻱也。从攴尃聲。《周書》曰：“用𢾭遺後人。”",
+    "eEn": "To spread or distribute, glossed here by 𢻱. Formed from 攴, with 尃 indicating the pronunciation. The Documents of Zhou says: “Use it to bestow [something] upon later generations.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2073": {
+    "e": "灼龜坼也。从卜；兆，象形。",
+    "eEn": "Cracks produced by heating a turtle shell for divination. Formed from 卜; 兆 is described as a pictorial form.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2247": {
+    "e": "羽之𦐧風。亦古諸侯也。一曰射師。从羽幵聲。",
+    "eEn": "The motion of wings stirring the wind. Also the name of an ancient regional lord. Another explanation is “archery master.” Formed from 羽, with 幵 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2288": {
+    "e": "𨿠也。从隹氐聲。",
+    "eEn": "The bird called 𨿠; the source defines the two bird names by reference to one another rather than giving a further description. Formed from 隹, with 氐 indicating the pronunciation.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "2317": {
+    "e": "戾也。从𦫳而兆。兆，古文別。",
+    "eEn": "To go against or diverge. Formed from 𦫳 together with 兆. Here 兆 is an ancient form of 別, “to separate.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2443": {
+    "e": "鷙鳥也。从鳥屰聲。",
+    "eEn": "A bird of prey. Formed from 鳥, with 屰 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2514": {
+    "e": "進取也。从𠬪古聲。",
+    "eEn": "To advance and take something. Formed from 𠬪, with 古 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2516": {
+    "e": "溝也。从𣦼从谷。讀若郝。",
+    "eEn": "A ditch or channel. Formed from 𣦼 and 谷. Read like 郝.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2538": {
+    "e": "腐也。从歺丂聲。",
+    "eEn": "To decay or rot. Formed from 歺, with 丂 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2614": {
+    "e": "髆也。从肉，象形。",
+    "eEn": "The shoulder. Formed from 肉 and described as pictorial in form.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2730": {
+    "e": "筋之本也。从筋，从夗省聲。",
+    "eEn": "The base or attachment of a sinew. Formed from 筋, with a reduced form of 夗 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "2788": {
+    "e": "刑鼻也。从刀臬聲。《易》曰：“天且㓷。”",
+    "eEn": "The punishment of cutting off the nose. Formed from 刀, with 臬 indicating the pronunciation. The Changes uses the words 天且㓷, ending with “and the cutting off of the nose”; the sense of 天 in this excerpt is uncertain without further commentary.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "2946": {
+    "e": "可以收繩也。从竹，象形，中象人手所推握也。",
+    "eEn": "An implement for winding up rope. Formed from 竹 and described as pictorial; the middle depicts the part pushed or grasped by a person's hand.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "3158": {
+    "e": "腫血也。从血，䢉省聲。",
+    "eEn": "Blood associated with a swelling, literally “swollen blood” in this gloss. Formed from 血, with a reduced form of 䢉 indicating the pronunciation.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "3293": {
+    "e": "弓弩發於身而中於遠也。从矢从身。",
+    "eEn": "An arrow shot from a bow or crossbow, leaving the body and hitting something at a distance. Formed from 矢 and 身.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "3321": {
+    "e": "長味也。从𣆪，鹹省聲。《詩》曰：“實覃實吁。”",
+    "eEn": "A lingering or far-reaching flavor. Formed from 𣆪, with a reduced form of 鹹 indicating the pronunciation. The Odes says: “It truly reaches far and wide.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "3325": {
+    "e": "穀所振入。宗廟粢盛，倉黃㐭而取之，故謂之㐭。从入，回象屋形，中有戶牖。凡㐭之屬皆从㐭。",
+    "eEn": "A place into which grain is poured. Grain for offerings at the ancestral temple is taken from it in haste; the text connects this action with the name 㐭. Formed from 入, while 回 depicts a building with doors and windows in the middle. All characters in the 㐭 class are formed with 㐭.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "3377": {
+    "e": "履後帖也。从韋段聲。",
+    "eEn": "A patch or supporting piece at the back of a shoe. Formed from 韋, with 段 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "3671": {
+    "e": "臿也。从木㠯聲。一曰徙土纪，齊人語也。",
+    "eEn": "A spade. Formed from 木, with 㠯 indicating the pronunciation. Another explanation gives 徙土纪, a Qi expression apparently referring to a tool for moving earth; the final graph 纪 in this transmitted wording is uncertain.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "3917": {
+    "e": "物數紛𧶊亂也。从員云聲。讀若《春秋傳》曰“宋皇鄖”。",
+    "eEn": "A confused multitude of things. Formed from 員, with 云 indicating the pronunciation. Read like 鄖 in the Spring and Autumn Commentary's name 宋皇鄖, “Huang Yun of Song.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "3974": {
+    "e": "衒也。从貝𡍬聲。𡍬，古文睦。讀若育。",
+    "eEn": "To display goods for sale. Formed from 貝, with 𡍬 indicating the pronunciation. 𡍬 is an ancient form of 睦. Read like 育.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "3999": {
+    "e": "夏后時諸矦夷羿國也。从邑，窮省聲。",
+    "eEn": "The state of Yi (夷羿), a regional lord in the time of the Xia rulers. Formed from 邑, with a reduced form of 窮 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4002": {
+    "e": "周文王所封。在右扶風美陽中水鄉。从邑支聲。",
+    "eEn": "The place where King Wen of Zhou held his fief. It lay in Zhongshui township, Meiyang, in Right Fufeng. Formed from 邑, with 支 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4260": {
+    "e": "旦也。从倝舟聲。",
+    "eEn": "Dawn. Formed from 倝, with 舟 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4305": {
+    "e": "翌也。从明亡聲。",
+    "eEn": "The following day, glossed as 翌. Formed from 明, with 亡 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4315": {
+    "e": "早敬也。从丮，持事；雖夕不休：早敬者也。",
+    "eEn": "Diligence from early in the day. Formed from 丮, holding to one's work; not resting even in the evening is described as such early diligence.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4326": {
+    "e": "木生條也。从𢎘由聲。《商書》曰：“若顚木之有织枿。”古文言由枿。",
+    "eEn": "A tree putting out branches or shoots. Formed from 𢎘, with 由 indicating the pronunciation. The Documents of Shang compares it to a toppled tree with new shoots; the transmitted quotation writes 织枿, whose first graph is uncertain here. The ancient-script wording is 由枿.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "4386": {
+    "e": "禾成秀也，人所以收。从爪、禾。",
+    "eEn": "Grain with its ears fully formed, which people harvest. Formed from 爪 and 禾.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4448": {
+    "e": "黏也。从黍古聲。",
+    "eEn": "Sticky. Formed from 黍, with 古 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4522": {
+    "e": "菜也。葉似韭。从韭㕢聲。",
+    "eEn": "A vegetable whose leaves resemble chives. Formed from 韭, with 㕢 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4561": {
+    "e": "無人聲。从宀尗聲。",
+    "eEn": "The absence of human voices. Formed from 宀, with 尗 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4766": {
+    "e": "治也。从疒樂聲。",
+    "eEn": "To treat or cure an illness. Formed from 疒, with 樂 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4793": {
+    "e": "网也。从网干聲。",
+    "eEn": "A net. Formed from 网, with 干 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "4824": {
+    "e": "馬絡頭也。从网从𩡧。𩡧，馬絆也。",
+    "eEn": "A horse's headstall. Formed from 网 and 𩡧. 𩡧 is a hobble for a horse.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5126": {
+    "e": "妎也。从人疾聲。一曰毒也。",
+    "eEn": "Jealousy, glossed by 妎. Formed from 人, with 疾 indicating the pronunciation. Another explanation is “malice” or “poisonous harm” (毒).",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5245": {
+    "e": "交衽也。从衣金聲。",
+    "eEn": "The overlapping front or lapels of a garment. Formed from 衣, with 金 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5319": {
+    "e": "袒也。从衣𣎆聲。",
+    "eEn": "To bare or uncover the body. Formed from 衣, with 𣎆 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5429": {
+    "e": "方舟也。从方亢聲。《禮》：天子造舟，諸矦維舟，大夫方舟，士特舟。",
+    "eEn": "Boats placed side by side. Formed from 方, with 亢 indicating the pronunciation. The Rites distinguishes the Son of Heaven's joined-boat arrangement (造舟), the regional lords' linked boats (維舟), the high officers' paired boats (方舟), and a shi's single boat (特舟).",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5447": {
+    "e": "禿皃。从禿貴聲。",
+    "eEn": "A bald appearance. Formed from 禿, with 貴 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5563": {
+    "e": "歠也。从欠酓聲。凡㱃之屬皆从㱃。",
+    "eEn": "To drink or swallow. Formed from 欠, with 酓 indicating the pronunciation. All characters in the 㱃 class are formed with 㱃.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5565": {
+    "e": "慕欲口液也。从欠从水。凡㳄之屬皆从㳄。",
+    "eEn": "Saliva in the mouth when one longs for something. Formed from 欠 and 水. All characters in the 㳄 class are formed with 㳄.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5571": {
+    "e": "事有不善言𣄴也。《爾雅》：“𣄴，薄也。”从㒫京聲。",
+    "eEn": "A term used when speaking of something that is not good. The Erya glosses 𣄴 as 薄, “slight” or “thin.” Formed from 㒫, with 京 indicating the pronunciation.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "5649": {
+    "e": "顫也。从頁尤聲。",
+    "eEn": "To tremble. Formed from 頁, with 尤 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5670": {
+    "e": "面焦枯小也。从面、焦。",
+    "eEn": "A face that is withered, dried out, and shrunken. Formed from 面 and 焦.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5742": {
+    "e": "厚怒聲。从口、后，后亦聲。",
+    "eEn": "A deep, angry cry. Formed from 口 and 后; 后 also indicates the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5767": {
+    "e": "章也。六卿：天官冢宰、地官司徒、春官宗伯、夏官司馬、秋官司寇、冬官司空。从𠨍皀聲。",
+    "eEn": "Distinction or prominence, glossed as 章. The six qing offices are the Grand Steward of Heaven (天官冢宰), Minister of Instruction of Earth (地官司徒), Grand Ritualist of Spring (春官宗伯), Minister of War of Summer (夏官司馬), Minister of Justice of Autumn (秋官司寇), and Minister of Works of Winter (冬官司空). Formed from 𠨍, with 皀 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5816": {
+    "e": "相訹呼也。从厶从羑。",
+    "eEn": "To entice or beguile one another by calling. Formed from 厶 and 羑.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5827": {
+    "e": "山，在蜀湔氐西徼外。从山𢽹聲。",
+    "eEn": "A mountain beyond the western frontier of Jiandi in Shu. Formed from 山, with 𢽹 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "5846": {
+    "e": "高也。从山陖聲。",
+    "eEn": "High. Formed from 山, with 陖 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6018": {
+    "e": "石磑也。从石靡聲。",
+    "eEn": "A stone mill or grinding stone. Formed from 石, with 靡 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6071": {
+    "e": "豕，鬣如筆管者。出南郡。从㣇高聲。",
+    "eEn": "A pig-like animal with bristles resembling the tubes of writing brushes. It comes from Nanjun. Formed from 㣇, with 高 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6072": {
+    "e": "蟲，似豪豬者。从㣇，胃省聲。",
+    "eEn": "A creature resembling a porcupine. Formed from 㣇, with a reduced form of 胃 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6241": {
+    "e": "大麋也。狗足。从鹿旨聲。",
+    "eEn": "A large deer of the 麋 kind, with feet like a dog's. Formed from 鹿, with 旨 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6257": {
+    "e": "鹿行揚土也。从麤从土。",
+    "eEn": "Earth raised as deer walk. Formed from 麤 and 土.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6293": {
+    "e": "嗾犬厲之也。从犬，將省聲。",
+    "eEn": "To call on a dog and urge it forward. Formed from 犬, with a reduced form of 將 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6313": {
+    "e": "多畏也。从犬去聲。",
+    "eEn": "Very fearful. Formed from 犬, with 去 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6404": {
+    "e": "火色也。从火雁聲。讀若鴈。",
+    "eEn": "The color or appearance of fire. Formed from 火, with 雁 indicating the pronunciation. Read like 鴈.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6446": {
+    "e": "火餘也。从火聿聲。一曰薪也。",
+    "eEn": "What remains of a fire: embers or ash. Formed from 火, with 聿 indicating the pronunciation. Another explanation is “firewood.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6590": {
+    "e": "吉而免凶也。从屰从夭。夭，死之事。故死謂之不𡴘。",
+    "eEn": "To have good fortune and escape calamity. Formed from 屰 and 夭. 夭 concerns death; thus dying is called 不𡴘, “unfortunate.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "6597": {
+    "e": "蹇也。从𡯂皮聲。",
+    "eEn": "Lame or having difficulty walking. Formed from 𡯂, with 皮 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7233": {
+    "e": "水濡而乾也。从水𪄿聲。《詩》曰：“𤅩其乾矣。”",
+    "eEn": "To dry after being wet with water. Formed from 水, with 𪄿 indicating the pronunciation. The Odes says: “It has become dry.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7284": {
+    "e": "水澤多也。从水圅聲。《詩》曰：“僭始旣𣹢。”",
+    "eEn": "An abundance of water or marshland. Formed from 水, with 圅 indicating the pronunciation. The Odes uses it in the line 僭始旣𣹢, concerning falsehood spreading from its beginning; the exact sense of the terse quotation is uncertain here.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "7382": {
+    "e": "濯衣垢也。从水𧹳聲。",
+    "eEn": "To wash dirt out of clothing. Formed from 水, with 𧹳 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7436": {
+    "e": "水行也。从沝、㐬。㐬，突忽也。",
+    "eEn": "Water flowing. Formed from 沝 and 㐬. 㐬 denotes a sudden or swift movement.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7437": {
+    "e": "徒行厲水也。从沝从步。",
+    "eEn": "To ford water on foot. Formed from 沝 and 步.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7440": {
+    "e": "水小流也。《周禮》：“匠人爲溝洫，㭒廣五寸，二㭒爲耦；一耦之伐，廣尺、深尺，謂之𡿨。”倍𡿨謂之遂；倍遂曰溝；倍溝曰洫；倍洫曰巜。凡𡿨之屬皆从𡿨。",
+    "eEn": "A small water channel. The Rites of Zhou says: “When craftsmen make field drains, a 㭒 is five cun wide; two 㭒 make a pair. A cut made by one pair, one chi wide and one chi deep, is called a 𡿨.” Twice a 𡿨 is a 遂; twice a 遂 is a 溝; twice a 溝 is a 洫; twice a 洫 is a 巜. All characters in the 𡿨 class are formed with 𡿨. The historical units cun and chi are retained.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7460": {
+    "e": "血理分衺行體者。从𠂢从血。",
+    "eEn": "The branching channels of blood that run obliquely through the body. Formed from 𠂢 and 血.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7475": {
+    "e": "仌出也。从仌朕聲。《詩》曰：“納于𠗲陰。”",
+    "eEn": "Ice coming forth. Formed from 仌, with 朕 indicating the pronunciation. The Odes says: “Store it in the ice chamber.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7616": {
+    "e": "海大魚也。从魚畺聲。《春秋傳》曰：“取其䲔鯢。”",
+    "eEn": "A large sea “fish,” in the source's historical classification. Formed from 魚, with 畺 indicating the pronunciation. The Spring and Autumn Commentary says: “Take their 䲔 and 鯢.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7647": {
+    "e": "捕魚也。从𩺰从水。",
+    "eEn": "To catch fish. Formed from 𩺰 and 水.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7655": {
+    "e": "翄也。从飛異聲。",
+    "eEn": "A wing. Formed from 飛, with 異 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7787": {
+    "e": "𩔞也。象形。凡𦣞之屬皆从𦣞。",
+    "eEn": "The jaw or chin, glossed by 𩔞. A pictograph. All characters in the 𦣞 class are formed with 𦣞.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7804": {
+    "e": "首至地也。从手、𠦪。𠦪音忽。",
+    "eEn": "To bow until the head reaches the ground. Formed from 手 and 𠦪. 𠦪 is pronounced like 忽.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7833": {
+    "e": "撮持也。从手監聲。",
+    "eEn": "To gather up and hold. Formed from 手, with 監 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7851": {
+    "e": "拊也。从手百聲。",
+    "eEn": "To pat or stroke. Formed from 手, with 百 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7895": {
+    "e": "煩也。从手夒聲。",
+    "eEn": "To trouble or bother. Formed from 手, with 夒 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7908": {
+    "e": "引縱曰𤸪。从手，瘛省聲。",
+    "eEn": "To pull and then release. Formed from 手, with a reduced form of 瘛 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7955": {
+    "e": "引也。从手畱聲。",
+    "eEn": "To pull or draw. Formed from 手, with 畱 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7962": {
+    "e": "拔取也。南楚語。从手寒聲。《楚詞》曰：“朝㩃批之木蘭。”",
+    "eEn": "To pull out or pluck. A term used in southern Chu. Formed from 手, with 寒 indicating the pronunciation. The Songs of Chu says: “In the morning I pluck the magnolia at 批.” The graph 批 in the supplied quotation is uncertain and has not been silently replaced.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "7967": {
+    "e": "搖也。从手咸聲。",
+    "eEn": "To shake. Formed from 手, with 咸 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "7972": {
+    "e": "反手擊也。从手𣬉聲。",
+    "eEn": "To strike with the hand turned back. Formed from 手, with 𣬉 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8047": {
+    "e": "旌旗，所以指麾也。从手靡聲。",
+    "eEn": "A signal flag used to give directions or commands. Formed from 手, with 靡 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8067": {
+    "e": "背呂也。象脅肋也。凡𠦬之屬皆从𠦬。",
+    "eEn": "The vertebrae of the back. Its form depicts the ribs along the sides. All characters in the 𠦬 class are formed with 𠦬.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8161": {
+    "e": "順也。从女𤔔聲。《詩》曰：“婉兮𡡗兮。”",
+    "eEn": "Compliant or yielding. Formed from 女, with 𤔔 indicating the pronunciation. The Odes says: “Graceful and compliant.”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8303": {
+    "e": "有所恨也。从女纴聲。今汝南人有所恨曰㛴。",
+    "eEn": "To feel resentment or a grievance. Formed from 女, with 纴 indicating the pronunciation. The text says that the people of Runan use 㛴 when they have a grievance.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8664": {
+    "e": "馬髦飾也。从糸𣫭聲。《春秋傳》曰：“可以稱旌緐乎？”",
+    "eEn": "An ornament for a horse's mane. Formed from 糸, with 𣫭 indicating the pronunciation. The Spring and Autumn Commentary asks: “Could it be suitable for flags and mane ornaments?”",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8736": {
+    "e": "繛也。从素，爰省。",
+    "eEn": "Ample or slack, glossed by 繛. Formed from 素 and a reduced form of 爰.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8777": {
+    "e": "毒蟲也。象形。",
+    "eEn": "A venomous creature. A pictograph.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8877": {
+    "e": "似蜥易，長一丈，水潛，吞人卽浮，出日南。从虫屰聲。",
+    "eEn": "An animal resembling a lizard, one zhang long. It stays submerged in water and rises to the surface after swallowing a person. It comes from Rinan. Formed from 虫, with 屰 indicating the pronunciation. These are the source's historical descriptions; the historical length unit zhang is retained.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8904": {
+    "e": "齧人跳蟲。从䖵㕚聲。㕚，古爪字。",
+    "eEn": "A jumping insect that bites people. Formed from 䖵, with 㕚 indicating the pronunciation. 㕚 is an ancient form of 爪.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8916": {
+    "e": "蠭甘飴也。一曰螟子。从䖵鼏聲。",
+    "eEn": "The sweet substance made by bees. Another explanation is “the young of the insect called 螟.” Formed from 䖵, with 鼏 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8923": {
+    "e": "蚍𧖚也。从䖵㯱聲。",
+    "eEn": "Used in the insect name 蚍𧖚, an ant. Formed from 䖵, with 㯱 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8927": {
+    "e": "蟲食艸根者。从蟲，象其形。吏抵冒取民財則生。",
+    "eEn": "An insect that eats the roots of plants. Formed from 蟲 and depicting its shape. The text adds the historical belief that it appears when officials wrongfully seize the people's property.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8928": {
+    "e": "蚍蜉，大螘也。从蟲𣬈聲。",
+    "eEn": "蚍蜉: a large ant. Formed from 蟲, with 𣬈 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "8930": {
+    "e": "臭蟲，負蠜也。从蟲非聲。",
+    "eEn": "A foul-smelling insect called 負蠜. Formed from 蟲, with 非 indicating the pronunciation.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "9282": {
+    "e": "鉏䥏也。从金御聲。",
+    "eEn": "Used in the term 鉏䥏, whose meaning is not explained further in this entry. Formed from 金, with 御 indicating the pronunciation.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "9567": {
+    "e": "小𨸏也。象形。凡𠂤之屬皆从𠂤。",
+    "eEn": "A small hill or mound (𨸏). A pictograph. All characters in the 𠂤 class are formed with 𠂤.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "9666": {
+    "e": "𨹟也。从𨺅，纷聲。纷，籒文嗌字。",
+    "eEn": "A confined or narrow passage, glossed by 𨹟. Formed from 𨺅, with 纷 indicating the pronunciation. Here 纷 is said to be the large-seal-script (籒文) form of 嗌.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  },
+  "9749": {
+    "e": "用也。从反巳。賈侍中說：巳，意巳實也。象形。",
+    "eEn": "To use. Formed from an inverted 巳. Chamberlain Jia explains it with the words 巳，意巳實也, apparently connecting 巳 with an intention already fulfilled; the transmitted wording is unclear. A pictograph.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "9814": {
+    "e": "盬也。从肉从酉，酒以和𨡓也；爿聲。",
+    "eEn": "A meat-and-salt preparation. The supplied gloss is 盬, a word associated with salt; its precise sense here is uncertain. Formed from 肉 and 酉, because wine is used to blend the preparation; 爿 indicates the pronunciation.",
+    "reason": "Project English reading aid; an opaque gloss or uncertain transmitted wording is retained and identified rather than silently corrected."
+  },
+  "9831": {
+    "e": "酒器也。从酋，廾以奉之。《周禮》六尊：犧尊、象尊、著尊、壺尊、太尊、山尊，以待祭祀賓客之禮。",
+    "eEn": "A vessel for wine. Formed from 酋, with 廾 representing the hands presenting it. The Rites of Zhou lists six zun vessels—犧尊, 象尊, 著尊, 壺尊, 太尊, and 山尊—for rites involving sacrifices and the reception of guests.",
+    "reason": "Project English reading aid translated from the retained Shuowen source; historical wording, variant forms, and uncertainties preserved."
+  }
+}

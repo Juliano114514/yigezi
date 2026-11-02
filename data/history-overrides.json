@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "characters": {
+    "忙": {
+      "exclude": [
+        "4305"
+      ],
+      "reason": "官方4305字头为𦟁，读huāng、释翌也、属朙部。其indexes含忙是检索关系，不足以认定现代máng忙的同字词源；避免将忙误归朙部。",
+      "source": "https://github.com/shuowenjiezi/shuowen/blob/6553a350763ce4feca2c5d1cc2cad7e594dc2975/data/4305.json"
+    },
+    "穷": {
+      "preferred": [
+        "4652"
+      ],
+      "reason": "优先4652竆的極也义作为现代穷的历史主条；3999𥨪是穷国专名的另条，保留可选并明示字头，不将其默认当作穷的本义。",
+      "source": "https://github.com/shuowenjiezi/shuowen/blob/6553a350763ce4feca2c5d1cc2cad7e594dc2975/data/4652.json"
+    },
+    "已": {
+      "exclude": [
+        "9748"
+      ],
+      "preferred": [],
+      "reason": "原站仅以已作巳的检索索引，未给出身份或重文说明；现代已(yǐ)与巳(sì)不直接等同，暂不作为已的释文归部。",
+      "source": "Fixed official source indexes, headword, explanation and pinyin; conservative project identity review."
+    },
+    "栏": {
+      "exclude": [
+        "3515"
+      ],
+      "preferred": [],
+      "reason": "原站将欄索引至楝(liàn,木名)，未给出身份说明；不能据此把栏(lán)解释成楝树或从柬声。",
+      "source": "Fixed official source indexes, headword, explanation and pinyin; conservative project identity review."
+    },
+    "抱": {
+      "exclude": [
+        "7871"
+      ],
+      "preferred": [],
+      "reason": "只有检索索引联系；捊(póu,从手孚声)不能在缺少身份说明时直接充作现代抱(bào)的从包构形解释。",
+      "source": "Fixed official source indexes, headword, explanation and pinyin; conservative project identity review."
+    },
+    "坯": {
+      "exclude": [
+        "9073"
+      ],
+      "preferred": [],
+      "reason": "坯的旧字形坏与现代坏/壞有同形合流歧义；不能沿坏的索引将砖坯解释为壞(huài,败也)。",
+      "source": "Fixed official source indexes, headword, explanation and pinyin; conservative project identity review."
+    },
+    "嗟": {
+      "exclude": [
+        "3013"
+      ],
+      "preferred": [],
+      "reason": "仅检索索引联系；差(chā)与嗟(jiē)不能直接等同，声符相关不等于同一字头身份。",
+      "source": "Fixed official source indexes, headword, explanation and pinyin; conservative project identity review."
+    }
+  }
+}

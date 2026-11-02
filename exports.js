@@ -12,7 +12,9 @@ let exportHintState = { key: 'hint', params: {} };
 function exportSnapshot(options = {}) {
   return Object.freeze({
     lang: options.lang === 'zh' || options.lang === 'en' ? options.lang : LANG,
-    theme: Object.prototype.hasOwnProperty.call(THEMES, options.theme) ? options.theme : THEME
+    theme: Object.prototype.hasOwnProperty.call(THEMES, options.theme) ? options.theme : THEME,
+    entryId: Object.prototype.hasOwnProperty.call(options, 'entryId') ? options.entryId :
+      (typeof viewState !== 'undefined' && viewState.view === 'character' ? viewState.e || null : null)
   });
 }
 
@@ -117,16 +119,26 @@ function measureExportCard(context, record, options = {}) {
   const snapshot = exportSnapshot(options);
   const sw = record.sw || {};
   const explanation = snapshot.lang === 'en' ? sw.eEn : sw.e;
-  if (sw.e && !explanation) throw new Error('Missing English explanation');
   context.save();
   context.font = '26px Georgia,"Songti SC","Noto Serif CJK SC",serif';
-  const quoteLines = wrapExportText(context, explanation || exportText('noShuowen', {}, snapshot), 824, snapshot.lang);
-  const quoteTop = 636;
+  const quoteLines = wrapExportText(context, explanation || (sw.e ? exportText('translationUnavailable', {}, snapshot) + '\n' + sw.e : exportText('noShuowen', {}, snapshot)), 824, snapshot.lang);
+  context.font = '24px Georgia,"Songti SC","Noto Serif CJK SC",serif';
+  const structureText = [
+    record.construction.parts.map(part => exportText(constructionRoleKey(part.role), {}, snapshot) + ': ' + part.text).join(' · '),
+    record.construction.clauses.join('；')
+  ].filter(Boolean).join('\n');
+  const constructionLines = structureText ? wrapExportText(context, structureText, 824, snapshot.lang) : [];
+  const constructionTop = 637;
+  const quoteTop = constructionTop + (constructionLines.length ? constructionLines.length * 34 + 24 : 0);
   const quoteHeight = quoteLines.length * 40 + 36;
   const bits = [];
-  if (sw.r && sw.r !== record.t) bits.push(exportText('sourceRadical', { radical: sw.r }, snapshot));
+  bits.push(exportText('rarityBadge', { rarity: record.rarity }, snapshot));
+  if (sw.head) bits.push(exportText(record.entryRelation === 'index' ? 'sourceIndexedHead' : 'sourceHead', { head: sw.head }, snapshot));
+  if (sw.p) bits.push(exportText('sourceEntryReading', { reading: sw.p }, snapshot));
+  if (sw.r) bits.push(exportText('sourceRadical', { radical: sw.r }, snapshot));
   if (sw.v) bits.push(exportText('sourceVolume', { volume: Number(sw.v) }, snapshot));
   if (sw.w) bits.push(exportText('sourceVariants', { variants: sw.w }, snapshot));
+  if (record.variant?.e) bits.push(record.variant.head + ': ' + record.variant.e);
   context.font = '19px Georgia,"Songti SC","Noto Serif CJK SC",serif';
   const sourceLines = bits.length ? wrapExportText(context, bits.join(' · '), 856, snapshot.lang) : [];
   const sourceTop = quoteTop + quoteHeight + 31;
@@ -138,7 +150,7 @@ function measureExportCard(context, record, options = {}) {
   const footerHeight = brandLines.length * 27 + attributionLines.length * 25;
   const height = Math.ceil(Math.max(1080, bodyBottom + footerHeight + 148));
   context.restore();
-  return { snapshot, quoteLines, quoteTop, quoteHeight, sourceLines, sourceTop, brandLines, attributionLines, footerHeight, height };
+  return { snapshot, quoteLines, quoteTop, quoteHeight, constructionLines, constructionTop, sourceLines, sourceTop, brandLines, attributionLines, footerHeight, height };
 }
 
 function drawCard(context, width, height, record, scale, active = -1, options = {}) {
@@ -237,6 +249,9 @@ function drawCard(context, width, height, record, scale, active = -1, options = 
   context.fillStyle = theme.mut;
   context.font = '20px Georgia,"Songti SC",serif';
   context.fillText(exportText('sourceShuowen', {}, snapshot), 104, 612);
+  context.fillStyle = theme.red;
+  context.font = '24px Georgia,"Songti SC","Noto Serif CJK SC",serif';
+  layout.constructionLines.forEach((line, index) => context.fillText(line, 128, layout.constructionTop + index * 34));
   context.fillStyle = theme.box;
   context.fillRect(104, layout.quoteTop, 872, layout.quoteHeight);
   context.fillStyle = theme.red;
@@ -268,9 +283,8 @@ async function ensureFonts(record) {
 }
 
 function curData() {
-  const input = document.getElementById('q');
-  const match = (input ? input.value : '').match(/[\u4e00-\u9fff]/);
-  return match ? match[0] : null;
+  const character = typeof viewState !== 'undefined' && viewState.view === 'character' ? viewState.z : null;
+  return character && lookup(character) ? character : null;
 }
 
 function saveExport(blob, filename) {
@@ -291,7 +305,7 @@ function exportFilename(character, asGif, snapshot) {
 
 async function exportOne(character, asGif, options = {}) {
   const snapshot = exportSnapshot(options);
-  const record = lookup(character);
+  const record = lookup(character, snapshot.entryId);
   if (!record) return null;
   await ensureFonts(record);
   const width = asGif ? 540 : 1080;
@@ -373,6 +387,12 @@ async function exportBatch() {
   if (characters.length > EXPORT_MAX_BATCH) {
     setExportHint('exportTooMany', { max: EXPORT_MAX_BATCH });
     resetExportHint(5200);
+    return;
+  }
+  const unsupported = characters.filter(character => !lookup(character));
+  if (unsupported.length) {
+    setExportHint('exportUnsupported', { characters: unsupported.join('、') });
+    resetExportHint(7000);
     return;
   }
   const asGif = confirm(exportText('exportBatchFormat', { count: characters.length }, snapshot));

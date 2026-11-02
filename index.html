@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Explore Chinese characters from oracle-bone inscriptions to modern forms, with complete English and Chinese explanations and offline image export.">
+<meta name="description" content="Browse Chinese characters and vocabulary by rarity, pinyin, and Shuowen radicals, with historical explanations, bilingual reading aids, and offline image export.">
 <title>The Life of a Character</title>
 <script>document.documentElement.className='js';</script>
 <link rel="stylesheet" href="styles.css">
 <script src="characters.js" defer></script>
 <script src="browse-data.js" defer></script>
+<script src="wordlist-data.js" defer></script>
+<script src="shuowen-data.js" defer></script>
 <script src="i18n.js" defer></script>
 <script src="app.js" defer></script>
 <script src="browse.js" defer></script>
@@ -23,13 +25,12 @@
       <button class="lang-btn" type="button" data-lang="zh" aria-pressed="false" lang="zh-Hans">中文</button>
     </div>
     <h1 data-i18n="title">The Life of a Character</h1>
-    <div class="sub" data-i18n="subtitle">Oracle bone · Small seal · Traditional · Simplified</div>
-    <div class="stat" id="collection">10249 seal forms · 1425 oracle-bone forms · 7699 Shuowen entries</div>
   </header>
   <div class="workspace">
     <aside id="sidebar" class="sidebar">
       <button id="browse-toggle" type="button" aria-expanded="false" aria-controls="browse-nav" data-i18n="browseMenu">Browse</button>
       <nav id="browse-nav" aria-label="Character lookup">
+        <button id="nav-words" class="browse-nav-item" type="button" data-i18n="browseWords">Word list</button>
         <button id="nav-all" class="browse-nav-item" type="button" data-i18n="browseAll">All characters</button>
         <button id="nav-pinyin" class="browse-nav-item" type="button" data-i18n="browsePinyin">Pinyin</button>
         <button id="nav-radical" class="browse-nav-item" type="button" data-i18n="browseRadical">Radicals</button>
@@ -39,25 +40,26 @@
     </aside>
     <div class="content">
       <div class="content-controls">
-        <div class="search"><input id="q" value="" maxlength="6" placeholder="Enter a character" aria-label="Look up a Chinese character" autocomplete="off" spellcheck="false"></div>
+        <div class="search"><input id="q" value="" maxlength="100" placeholder="Search Hanzi, pinyin, or English" aria-label="Search the word list or character index" autocomplete="off" spellcheck="false"></div>
         <span class="themes" role="group" aria-label="Color theme">
           <button class="theme-btn on" type="button" data-k="paper" aria-pressed="true" data-i18n="themePaper">Rice paper</button>
           <button class="theme-btn" type="button" data-k="rubbing" aria-pressed="false" data-i18n="themeRubbing">Ink rubbing</button>
           <button class="theme-btn" type="button" data-k="classic" aria-pressed="false" data-i18n="themeClassic">Old manuscript</button>
         </span>
       </div>
-      <div class="quick" id="quick"></div>
       <section id="browse-results" aria-labelledby="results-title" hidden>
+        <div id="rarity-filters" class="rarity-filters" role="group" aria-label="Rarity" aria-describedby="rarity-explanation"></div>
+        <p id="rarity-explanation" class="rarity-explanation" data-i18n="rarityExplanation">Rarity 0: essential · 1: common · 2: less common. Select one or more levels; no selection shows all.</p>
         <div class="results-head">
           <h2 id="results-title" tabindex="-1"></h2>
           <span id="results-count" role="status" aria-live="polite"></span>
         </div>
         <div id="character-grid" class="character-grid"></div>
-        <p id="browse-empty" class="browse-empty" data-i18n="browseEmpty" hidden>No characters found.</p>
+        <p id="browse-empty" class="browse-empty" data-i18n="browseEmpty" hidden>No matching entries.</p>
         <div id="pagination" class="pagination"></div>
       </section>
       <div id="detail-view">
-        <button id="back-to-results" class="back-to-results" type="button" data-i18n="browseBack" hidden>Back to characters</button>
+        <button id="back-to-results" class="back-to-results" type="button" data-i18n="browseBack" hidden>Back to results</button>
         <div class="toolbar">
           <button id="play" type="button" data-i18n="play">Play evolution</button>
           <button id="exp-jpg" type="button" data-i18n="jpg">Save image</button>
@@ -82,7 +84,7 @@
   </div>
   <footer>
     <p data-i18n="footerFonts">Scalable glyph fonts: Shuowen Seal (Kaiyuan Small Seal, OFL-1.1; CNS11643, OGDL-Taiwan-1.0) and Oracular by Peichao Qin (OFL-1.1).</p>
-    <p data-i18n="footerData">Historical explanations and modern pinyin: shuowen.org. Simplified–traditional mappings: OpenCC. Both sources are distributed under Apache-2.0.</p>
+    <p data-i18n="footerData">Historical explanations and 540 radicals: shuowen.org (Apache-2.0). Character mappings: OpenCC (Apache-2.0). Modern readings: Unicode Unihan 18.0 (Unicode License V3).</p>
     <p data-i18n="footerLimits">Glyph coverage depends on the included fonts. The Shuowen is a historical source; its explanations are not a statement of modern scholarly consensus. English translations are reading aids and retain the original account’s uncertainties.</p>
     <p data-i18n="footerOffline">Lookup, language switching, and export work offline when the page files and fonts are saved together. Visitor counts require a network connection.</p>
     <p class="attribution" lang="zh-Hant">數位發展部，CNS11643中文標準交換碼全字庫網站，<a href="https://www.cns11643.gov.tw">https://www.cns11643.gov.tw</a></p>

@@ -1,8 +1,8 @@
 'use strict';
 const THEMES = {
-  paper: { bg: '#faf7f0', card: '#fdfbf7', ink: '#231f1a', red: '#a8322a', line: '#e8dfd0', box: '#f5f1e8', mut: '#9a8a76', dim: '#cfc4af' },
-  rubbing: { bg: '#191917', card: '#212120', ink: '#e9e4d9', red: '#c9a227', line: '#37372f', box: '#2a2a26', mut: '#8b8678', dim: '#5b5649' },
-  classic: { bg: '#f4eee0', card: '#fffdf6', ink: '#3a3025', red: '#a8442a', line: '#e4d9c0', box: '#f9f4e8', mut: '#9c8f76', dim: '#c8bda4' }
+  paper: { bg: '#f6f2e8', card: '#fffefa', ink: '#25231f', red: '#963d2d', line: '#cbc1ae', box: '#eee6d8', mut: '#625b50', dim: '#6d6459', onAccent: '#ffffff', controlLine: '#8a7c67' },
+  rubbing: { bg: '#181b20', card: '#22262d', ink: '#f2efe8', red: '#e5bb70', line: '#59616e', box: '#2d333d', mut: '#c9c2b5', dim: '#aea798', onAccent: '#181b20', controlLine: '#8b95a5' },
+  classic: { bg: '#eae4d6', card: '#fcf8ed', ink: '#2c332b', red: '#4f6144', line: '#b4b9a6', box: '#e5e9db', mut: '#4f5a49', dim: '#5c6852', onAccent: '#ffffff', controlLine: '#758369' }
 };
 let THEME = 'paper', timer = null, animationTimeout = null;
 const $ = selector => document.querySelector(selector);
@@ -14,29 +14,84 @@ function element(tag, className, text) {
   return node;
 }
 
-function lookup(raw) {
-  // Deliberately limited to the basic Han range. Extension headwords are retired.
-  const match = String(raw || '').match(/[\u4e00-\u9fff]/);
-  if (!match) return null;
-  const simple = match[0];
+function constructionInfo(sw) {
+  // Parse only explicit, short constructions in Xu Shen's text. Unresolved
+  // clauses remain visible; search components are never treated as etymology.
+  const clauses = (sw?.e || '').split(/[。；;！？]/u).map(value => value.trim())
+    .filter(value => value && !value.startsWith('凡') &&
+      (/[从從]/u.test(value) || /^\p{Script=Han}(?:亦|省)?聲$/u.test(value)));
+  const parts = [];
+  const add = (role, head, text) => {
+    if (!parts.some(part => part.role === role && part.head === head)) parts.push({ role, head, text });
+  };
+  for (const clause of clauses) {
+    const compact = clause.match(/^[从從](\p{Script=Han})(\p{Script=Han})(亦聲|省聲|聲)$/u);
+    if (compact) {
+      add('from', compact[1], clause.slice(0, 1) + compact[1]);
+      const role = compact[3] === '亦聲' ? 'also-sound' : compact[3] === '省聲' ? 'reduced-sound' : 'sound';
+      add(role, compact[2], compact[2] + compact[3]);
+      continue;
+    }
+    for (const match of clause.matchAll(/[从從](\p{Script=Han})(?=[从從，、]|$)/gu)) {
+      add('from', match[1], match[0]);
+    }
+    for (const segment of clause.split(/[，、]/u)) {
+      const sound = segment.trim().match(/^(\p{Script=Han})(亦聲|省聲|聲)$/u);
+      if (sound) add(sound[2] === '亦聲' ? 'also-sound' : sound[2] === '省聲' ? 'reduced-sound' : 'sound', sound[1], sound[0]);
+    }
+  }
+  return { clauses, parts };
+}
+
+function constructionRoleKey(role) {
+  return ({ from: 'constructionFrom', sound: 'constructionSound', 'also-sound': 'constructionAlsoSound', 'reduced-sound': 'constructionReducedSound' })[role];
+}
+
+function appendConstructionText(node, text, construction) {
+  const tokens = construction.parts.map(part => ({ ...part, start: text.indexOf(part.text) }))
+    .filter(part => part.start >= 0).sort((a, b) => a.start - b.start || b.text.length - a.text.length);
+  let cursor = 0;
+  for (const token of tokens) {
+    if (token.start < cursor) continue;
+    node.append(document.createTextNode(text.slice(cursor, token.start)));
+    const mark = element('mark', 'construction-mark ' + token.role, token.text);
+    mark.title = t(constructionRoleKey(token.role));
+    node.append(mark);
+    cursor = token.start + token.text.length;
+  }
+  node.append(document.createTextNode(text.slice(cursor)));
+}
+
+function lookup(raw, entryId = null) {
+  const simple = String(raw || '').trim();
+  if (!/^[\u4e00-\u9fff]$/u.test(simple) || !Object.prototype.hasOwnProperty.call(BROWSE_DATA.records, simple)) return null;
+  const modern = BROWSE_DATA.records[simple];
+  const entries = modern.entries.map(id => SHUOWEN_DATA.entries[id]).filter(Boolean);
+  const sw = entries.find(entry => String(entry.id) === String(entryId)) || entries[0] || null;
   const traditions = [...(TS[simple] || '')];
-  const traditional = traditions.find(char => SW[char] || HAS_ORAC.includes(char)) || traditions[0] || simple;
+  const traditional = sw && (sw.head === simple || traditions.includes(sw.head)) ? sw.head : (traditions[0] || simple);
+  const historical = sw?.head || traditional;
+  const variant = sw?.variants.find(item => item.head === simple || item.head === traditional) || null;
+  const displayForms = new Set([simple, ...traditions]);
+  const entryRelation = !sw ? null : displayForms.has(sw.head) ? 'head' :
+    sw.variants.some(item => displayForms.has(item.head)) ? 'variant' : 'index';
   return {
     s: simple, t: traditional, sameT: simple === traditional,
-    sw: SW[traditional] || SW[simple] || null,
-    pinyin: BROWSE_DATA.records[simple]?.p.join(' · ') || (SW[traditional] || SW[simple])?.p || '',
-    sealChar: HAS_SEAL.includes(traditional) ? traditional : (HAS_SEAL.includes(simple) ? simple : null),
-    oracChar: HAS_ORAC.includes(traditional) ? traditional : (HAS_ORAC.includes(simple) ? simple : null)
+    sw, entries, entryId: sw?.id || null, entryRelation, variant, rarity: modern.rarity,
+    construction: constructionInfo(sw),
+    pinyin: modern.p.join(' · ') || sw?.p || '',
+    sealChar: [historical, traditional, simple].find(char => HAS_SEAL.includes(char)) || null,
+    oracChar: [historical, traditional, simple].find(char => HAS_ORAC.includes(char)) || null
   };
 }
 
-function render(raw) {
+function render(raw, entryId = null) {
   clearInterval(timer);
   clearTimeout(animationTimeout);
-  const record = lookup(raw), card = $('#card');
+  const record = lookup(raw, entryId), card = $('#card');
   card.replaceChildren();
   if (!record) {
-    card.append(element('p', 'note', t('enterCharacter')));
+    card.append(element('p', 'note', raw ? t('unsupportedCharacter', { char: String(raw).slice(0, 6) }) : t('enterCharacter')));
     return;
   }
   const sw = record.sw || {};
@@ -44,7 +99,24 @@ function render(raw) {
   head.append(element('span', 'zi', record.s));
   if (!record.sameT) head.append(element('span', 'trad', record.t));
   if (record.pinyin) head.append(element('span', 'py', record.pinyin));
+  head.append(element('span', 'rarity-badge', t('rarityBadge', { rarity: record.rarity })));
   head.append(element('span', 'tag', t(record.oracChar ? 'allForms' : (record.sealChar ? 'hasSeal' : 'modernOnly'))));
+
+  const selector = element('div', 'entry-selector');
+  if (record.entries.length > 1) {
+    selector.setAttribute('role', 'group');
+    selector.setAttribute('aria-label', t('relatedEntries'));
+    selector.append(element('span', 'entry-label', t('relatedEntries')));
+    for (const entry of record.entries) {
+      const button = element('button', 'entry-option', entry.head + ' · ' + entry.r);
+      button.type = 'button';
+      const selected = entry.id === sw.id;
+      button.classList.toggle('on', selected);
+      button.setAttribute('aria-pressed', String(selected));
+      button.onclick = () => selectShuowenEntry(String(entry.id));
+      selector.append(button);
+    }
+  }
 
   const timeline = element('div', 'stages');
   timeline.id = 'tl';
@@ -75,28 +147,63 @@ function render(raw) {
   const explanation = element('section', 'shuowen');
   if (sw.e) {
     explanation.append(element('div', 'explanation-label', t('historicalAccount')));
-    explanation.append(element('div', 'q', LANG === 'en' ? (sw.eEn || t('translationUnavailable')) : sw.e));
+    const quote = element('div', 'q');
+    if (LANG === 'en') quote.textContent = sw.eEn || t('translationUnavailable');
+    else appendConstructionText(quote, sw.e, record.construction);
+    explanation.append(quote);
     if (LANG === 'en') {
       const original = element('details', 'original');
       original.append(element('summary', '', t('originalText')));
-      const quotation = element('p', 'original-text', sw.e);
+      const quotation = element('p', 'original-text');
+      appendConstructionText(quotation, sw.e, record.construction);
       quotation.lang = 'zh-Hant';
       original.append(quotation);
       explanation.append(original);
     }
     const source = [t('sourceShuowen')];
-    if (sw.r && sw.r !== record.t) source.push(t('sourceRadical', { radical: sw.r }));
+    source.push(t(record.entryRelation === 'index' ? 'sourceIndexedHead' : 'sourceHead', { head: sw.head }));
+    if (sw.p) source.push(t('sourceEntryReading', { reading: sw.p }));
+    if (sw.r) source.push(t('sourceRadical', { radical: sw.r }));
     if (sw.v) source.push(t('sourceVolume', { volume: Number(sw.v) }));
     if (sw.w) source.push(t('sourceVariants', { variants: sw.w }));
     explanation.append(element('div', 'src', source.join(' · ')));
+    const link = element('a', 'source-link', t('sourceLink'));
+    link.href = 'https://www.shuowen.org/view/' + encodeURIComponent(sw.id);
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    explanation.append(link);
   } else explanation.append(element('p', 'q muted', t('noShuowen')));
-  card.append(head, timeline, phonetics, explanation);
+  card.append(head);
+  if (record.entries.length > 1) card.append(selector);
+  card.append(timeline, phonetics);
+  if (record.construction.clauses.length) {
+    const structure = element('section', 'construction');
+    structure.append(element('h3', '', t('constructionTitle')));
+    const parts = element('div', 'construction-parts');
+    for (const part of record.construction.parts) {
+      const item = element('div', 'construction-part ' + part.role);
+      item.append(element('span', 'role-label', t(constructionRoleKey(part.role))), element('strong', '', part.text));
+      parts.append(item);
+    }
+    structure.append(parts);
+    const original = element('p', 'construction-original');
+    original.lang = 'zh-Hant';
+    appendConstructionText(original, record.construction.clauses.join('；') + '。', record.construction);
+    structure.append(original);
+    card.append(structure);
+  }
+  card.append(explanation);
+  if (record.variant?.e) {
+    const variant = element('section', 'variant-note');
+    variant.append(element('h3', '', t('variantAccount', { char: record.variant.head })), element('p', '', record.variant.e));
+    card.append(variant);
+  }
 
   const correction = XZ[record.s] || XZ[record.t];
-  if (correction || (sw.e && record.oracChar)) {
+  if (correction) {
     const note = element('aside', 'xz');
-    note.append(element('div', 't', t(correction ? 'correction' : 'historicalNoteTitle')));
-    note.append(element('p', '', correction ? (LANG === 'en' ? correction.tEn : correction.t) : t('historicalNote')));
+    note.append(element('div', 't', t('correction')));
+    note.append(element('p', '', LANG === 'en' ? correction.tEn : correction.t));
     card.append(note);
   }
   const notes = [];
@@ -136,7 +243,6 @@ function updateStaticText() {
   $('.languages').setAttribute('aria-label', t('languageLabel'));
   $('.themes').setAttribute('aria-label', t('themeLabel'));
   $('#visit-stats').setAttribute('aria-label', t('statistics'));
-  $('#collection').textContent = t('collection', { seal: [...HAS_SEAL].length, oracle: [...HAS_ORAC].length, entries: Object.keys(SW).length });
   document.querySelectorAll('.lang-btn').forEach(button => {
     const active = button.dataset.lang === LANG;
     button.classList.toggle('on', active);
@@ -175,21 +281,6 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#exp-jpg').onclick = exportJPG;
   $('#exp-gif').onclick = exportGIF;
   $('#exp-batch').onclick = exportBatch;
-  const inputCharacter = event => {
-    if (event.isComposing) return;
-    const character = $('#q').value.match(/[\u4e00-\u9fff]/)?.[0];
-    if (character) openCharacter(character, true);
-    else if (!$('#q').value) navigateBrowse({ view: 'all', filter: '', page: 1 }, { focus: false, scroll: false });
-    else navigateBrowse({ view: 'invalid', raw: $('#q').value }, { replace: isCharacterView(), focus: false, scroll: false });
-  };
-  $('#q').addEventListener('input', inputCharacter);
-  $('#q').addEventListener('compositionend', inputCharacter);
-  for (const character of QUICK) {
-    const button = element('button', '', character);
-    button.type = 'button';
-    button.onclick = () => openCharacter(character);
-    $('#quick').append(button);
-  }
   document.querySelectorAll('.theme-btn').forEach(button => { button.onclick = () => applyTheme(button.dataset.k); });
   document.querySelectorAll('.lang-btn').forEach(button => { button.onclick = () => setLanguage(button.dataset.lang); });
   updateStaticText();

@@ -45,12 +45,21 @@ The character glyphs, original dictionary text, modern pinyin, and character map
 - Source / 来源：[Unicode 18.0.0 Unihan Database](https://www.unicode.org/Public/18.0.0/ucd/Unihan.zip), Unicode, Inc.; documentation / 字段说明：[UAX #38](https://www.unicode.org/reports/tr38/tr38-41.html).
 - Licence / 授权：**Unicode License V3 (Unicode-3.0)**; the full licence is retained in [Unicode-3.0.txt](licenses/Unicode-3.0.txt).
 - Copyright / 版权：© 1991–2026 Unicode, Inc.
-- Retained fields / 使用字段：`kTGH`, `kTGHZ2013`, `kXHC1983`, `kMandarin`, `kSimplifiedVariant`, and `kRSUnicode`.
-- `browse-data.js` is a project-generated subset covering the existing dictionary/font headwords and the General Standard Chinese Characters represented in the site's supported basic-Han range U+4E00–U+9FFF. Readings use `kTGHZ2013`, falling back to `kXHC1983`, then `kMandarin`; readings from different fields are not combined. / `browse-data.js` 是以现有字典、字形字头及 U+4E00–U+9FFF 基本汉字范围内的通用规范汉字生成的子集。读音依次采用 `kTGHZ2013`、`kXHC1983`、`kMandarin`，不合并不同字段的读音。
-- The familiar radical names, variant labels, selection, and index layout are project additions. Radical groups use Unicode radical IDs; they do not claim that every result contains a component at the same position. Historical *Shuowen* groupings remain separate from the browse index. / 常见部首名称、变体标签、筛选范围与索引编排为本项目补充。部首分组使用 Unicode 部首编号，不表示每个结果都在相同位置含有该偏旁；《说文》历史分部与检字索引分别保留。
+- Retained fields / 使用字段：`kTGH`, `kTGHZ2013`, `kXHC1983`, `kMandarin`, `kSimplifiedVariant`, `kTraditionalVariant`, and `kDefinition`.
+- `browse-data.js` contains only this edition's supported character headwords. Readings use `kTGHZ2013`, falling back to `kXHC1983`, then `kMandarin`. / `browse-data.js` 仅包含本期支持字头；读音依次采用上述字段。
+- The browse radical index now follows Xu Shen's 540 *Shuowen* divisions, using historical membership and source IDs from the fixed upstream dataset. Unicode modern radical IDs are not used as historical classifications. / 检字索引改用许慎540部首，以固定上游的历史归部及来源ID为据，不以Unicode现代部首代替说文归部。
+- Character rarity, retained/deleted headword decisions, source relationships, and layout are project editorial additions. The historical 1988 common-character list is used as a baseline; it is not presented as the current official rarity standard. / 字罕度、保留删除决定、关联关系与版式为项目编辑内容；1988旧表只作基准，不称为现行官方罕度标准。
 - Preserve the Unicode copyright and permission notice when redistributing this data or derived copies. / 再分发本数据或其衍生副本时，保留 Unicode 版权与许可声明。
 
-## 5. Code and attribution / 代码与显名
+## 5. Vocabulary / 词表
+
+- Input / 输入：the user-supplied Chinese Flashcard `wordlist.csv`, SHA-256 `6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a`; only its 15,585 rarity 0–2 rows and necessary lexical fields are selected. No example sentences are imported. / 只选取用户词表罕度0–2的15,585条必要词汇字段，不导入例句。
+- CC-CEDICT-derived readings and English glosses / CC-CEDICT改编读音与释义：CC-CEDICT contributors; CEDICT originally created by Paul Denisowski; distributed by [MDBG](https://www.mdbg.net/chinese/dictionary?page=cedict). Relevant adaptations retain [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and attribution. / 相关改编保留同许可、署名及修改说明。
+- Word rarity labels are inherited Chinese Flashcard editorial teaching stages; character rarity is this project's separate classification. The selected projection, filtering, cross-links, and character coverage are changes made for this edition. / 词罕度沿用原教学阶段，字罕度独立；本期修改包括字段筛选、范围过滤、关联和字目覆盖。
+- The source project's notices identify mixed original materials whose public redistribution rights are not fully certified. No blanket MIT relicensing or independent rights certification is claimed here. / 原项目声明部分混合来源材料的公开再分发权待核实，本项目不将其整体改标MIT，也不宣称已独立完成全部权利核查。
+- The frozen source manifest records the actual selected fields, source hashes, and provenance. / 冻结来源清单记录实际字段、来源哈希及归属。
+
+## 6. Code and attribution / 代码与显名
 
 The project code is distributed under the [MIT licence](LICENSE). The original `Copyright (c) 2026 Ivan666jjj` notice is retained. The licences above govern their respective data and fonts independently of the project code licence.
 
