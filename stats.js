@@ -1,40 +1,29 @@
-/*! 访问统计 —— 零依赖、零注册、零后端
- *
- *  做两件事：
- *    ① 显示访客是从哪来的（不蒜子只给总数，不给来源）
- *    ② 用 Abacus 做一份自建计数，按来源分桶存下来
- *
- *  页面里需要先有这些元素（不蒜子要静态找到它们才会填数字）：
- *    <div id="visit-stats">
- *      本页被看过 <b><span id="busuanzi_value_page_pv">…</span></b> 次 ·
- *      <b><span id="busuanzi_value_site_uv">…</span></b> 位访客 ·
- *      来源 <span id="stat-source">检测中</span>
- *    </div>
- *    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
- *    <script src="stats.js" defer></script>
- *
- *  隐私：不采集 IP、不种 cookie、不识别个人身份，只做计数。
+/*! Visit statistics / 访问统计
+ * Shows the current referral category and sends total/source counter requests
+ * to Abacus. Busuanzi separately fills the page/visitor count elements.
+ * The external services receive network requests; their data handling is
+ * governed by their own policies.
  */
 (function () {
   'use strict';
 
   // ⚠️ Abacus 的命名空间和 key 都不能含 . 或 /（会返回 308 重定向，计数静默丢失）
   //    所以这里用连字符拼接，不要改成域名形式。
-  var NS = 'ivan666jjj-yigezi';
+  var NS = 'juliano114514-yigezi';
   var ABACUS = 'https://abacus.jasoncameron.dev/hit/';
 
   var NAMES = {
-    'direct':       '直接访问',
-    'indep-list':   '独立开发者列表',
-    'weekly':       '阮一峰周刊',
-    'hellogithub':  'HelloGitHub',
-    'xiaohongshu':  '小红书',
-    'im':           '微信 / QQ',
-    'search':       '搜索引擎',
-    'github':       'GitHub',
-    'github-other': 'GitHub 其他页',
-    'internal':     '站内跳转',
-    'other':        '其他站点'
+    'direct':       ['stats.source.direct', 'Direct visit'],
+    'indep-list':   ['stats.source.indepList', 'Chinese Independent Developers'],
+    'weekly':       ['stats.source.weekly', 'Ruanyifeng’s Weekly'],
+    'hellogithub':  ['stats.source.helloGithub', 'HelloGitHub'],
+    'xiaohongshu':  ['stats.source.xiaohongshu', 'Xiaohongshu'],
+    'im':           ['stats.source.im', 'WeChat / QQ'],
+    'search':       ['stats.source.search', 'Search engine'],
+    'github':       ['stats.source.github', 'GitHub'],
+    'github-other': ['stats.source.githubOther', 'Other GitHub page'],
+    'internal':     ['stats.source.internal', 'Internal link'],
+    'other':        ['stats.source.other', 'Other site']
   };
 
   function detectSource() {
@@ -62,7 +51,11 @@
   // 显示来源
   function showSource() {
     var el = document.getElementById('stat-source');
-    if (el) el.textContent = NAMES[src] || src;
+    var name = Object.prototype.hasOwnProperty.call(NAMES, src) ? NAMES[src] : null;
+    if (!el) return;
+    if (!name) { el.textContent = src; return; }
+    var i18n = window.YigeziI18n;
+    el.textContent = i18n && typeof i18n.t === 'function' ? i18n.t(name[0]) : name[1];
   }
 
   // 计数（失败不影响任何功能）
@@ -76,9 +69,20 @@
 
   function run() {
     showSource();
+    // Keep file:// lookup and export entirely local. Hosted pages retain counts.
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+    if (!document.getElementById('busuanzi-script')) {
+      var script = document.createElement('script');
+      script.id = 'busuanzi-script';
+      script.async = true;
+      script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+      document.head.appendChild(script);
+    }
     ping('total');
     ping('src-' + src);
   }
+
+  window.addEventListener('languagechange', showSource);
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', run);

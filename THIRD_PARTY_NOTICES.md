@@ -1,89 +1,51 @@
-# 第三方数据来源与授权声明
+# Third-party notices / 第三方数据来源与授权声明
 
-本项目**所收录的字形、释义与音韵数据均来自第三方**，版权与授权如下。
-再分发本页面（含导出的图片）时，请一并保留本文件的声明。
+The character glyphs, original dictionary text, modern pinyin, and character mappings in this edition come from the sources below. Preserve the applicable notices when redistributing this site or its exported images. English translations and editorial notes are additions to the source material, not statements by the original data providers.
 
----
+本版本的字形、字典原文、现代拼音和简繁映射来自下列第三方。再分发本页面或导出图片时，请保留相应声明。英文翻译与编辑说明为本项目补充，不代表原始数据提供者的观点。
 
-## 1. 字形
+## 1. Character fonts / 字形字体
 
-### 1.1 小篆 —— 开元小篆（主要来源）
+### 1.1 Kaiyuan Small Seal / 开元小篆
 
-- 来源：<https://github.com/frankslin/kaiyuan-small-seal-font>
-- 授权：**SIL Open Font License 1.1**（全文见 [`licenses/OFL-1.1.txt`](licenses/OFL-1.1.txt)）
-- 说明：将《说文解字》公版刻本扫描切字、逐字描摹为矢量字形，覆盖 Unicode 18.0 篆书区全部 11,328 个码位
-- 义务：保留版权声明与 OFL 全文；**衍生字体不得单独使用 "Kaiyuan" 作为字体名**
+- Source / 来源：[frankslin/kaiyuan-small-seal-font](https://github.com/frankslin/kaiyuan-small-seal-font).
+- Licence / 授权：**SIL Open Font License 1.1**; see [OFL-1.1.txt](licenses/OFL-1.1.txt).
+- Glyphs are derived from public-domain editions of the *Shuowen Jiezi*. The site ships a subsetted font. / 字形据《说文解字》公版刻本描摹，网站使用子集化字体。
+- Retain the font copyright notices and the full OFL. A derivative font must not use the reserved name "Kaiyuan" alone. / 保留字体版权声明与 OFL 全文，衍生字体命名须遵循原始许可的保留字体名要求。
 
-### 1.2 小篆 —— 全字库说文解字（补充）
+### 1.2 CNS11643 *Shuowen* glyphs / 全字库说文解字补充字形
 
-- 来源：<https://www.cns11643.gov.tw>（数位发展部）
-- 授权：**《政府资料开放授权条款 - 第 1 版》**（OGDL-Taiwan-1.0）
-- **显名义务（OGDL 强制条款）**：
+- Source / 来源：[CNS11643 中文標準交換碼全字庫](https://www.cns11643.gov.tw), Ministry of Digital Affairs / 數位發展部。
+- Licence / 授权：**Open Government Data License, version 1.0 (Taiwan)** / **《政府資料開放授權條款－第1版》**（OGDL-Taiwan-1.0）。
+- Required attribution, retained verbatim / 必须保留的显名文字：
 
   > 數位發展部，CNS11643中文標準交換碼全字庫網站，https://www.cns11643.gov.tw
 
-  OGDL 明定「未尽显名标示义务者，视为自始未取得开放资料之授权」，故此句不可省略。
+### 1.3 Oracular 鏡原甲骨文
 
-### 1.3 甲骨文 —— Oracular 鏡原甲骨文
+- Source / 来源：[Oracular](https://oracular.azurewebsites.net/), Peichao Qin / 鏡原甲骨數字平台。
+- Licence / 授权：**SIL Open Font License 1.1**; see [OFL-1.1.txt](licenses/OFL-1.1.txt).
+- Font copyright registration / 字库版权登记号：**国作登字-2024-F-00223767**。
+- Retain the font copyright notices and the full OFL. / 保留字体版权声明与 OFL 全文。
 
-- 来源：<https://oracular.azurewebsites.net/>（作者 Peichao Qin，「镜原甲骨数字平台」）
-- 授权：**SIL Open Font License 1.1**
-- 字库版权登记号：国作登字-2024-F-00223767
+## 2. *Shuowen Jiezi* data / 《说文解字》数据
 
----
+- Source / 来源：[shuowen.org](http://www.shuowen.org/), repository / 数据仓库 `shuowenjiezi/shuowen`.
+- Licence / 授权：**Apache License 2.0**。
+- Retained content / 使用内容：head characters, original explanations, modern pinyin, radicals, volume numbers, and variant forms / 字头、原文释义、现代拼音、部首、卷次、重文。
+- The original text is preserved as historical dictionary material. Project English translations are reading aids; consult the Chinese original for precise interpretation. / 原文作为历史字书材料保留；项目英文翻译用于辅助阅读，准确释读请核对中文原文。
 
-## 2. 《说文解字》数据
+## 3. Character mappings / 简繁映射
 
-- 来源：<http://www.shuowen.org>（数据仓库 `shuowenjiezi/shuowen`）
-- 授权：**Apache License 2.0**
-- 内容：字头、《说文》原文、反切、拼音、部首、卷次、重文
+- Source / 来源：[OpenCC](https://github.com/BYVoid/OpenCC).
+- Licence / 授权：**Apache License 2.0**。
 
-## 3. 简繁映射
+## 4. Code and attribution / 代码与显名
 
-- 来源：**OpenCC** <https://github.com/BYVoid/OpenCC>
-- 授权：**Apache License 2.0**
+The project code is distributed under the [MIT licence](LICENSE). The original `Copyright (c) 2026 Ivan666jjj` notice is retained. The licences above govern their respective data and fonts independently of the project code licence.
 
-## 4. 中古音
+项目代码使用 [MIT 许可](LICENSE)，保留原始 `Copyright (c) 2026 Ivan666jjj` 声明。上述数据与字体分别遵循其各自许可，不因项目代码采用 MIT 而改变。
 
-- 来源：**PHONO-ML Database** <https://github.com/alxdrdelaporte/PHONO-ML_database>
-- 机构：Centre de recherches linguistiques sur l'Asie orientale (**CRLAO**), CNRS UMR 8563
-- 作者：Guillaume **JACQUES** 主持，Alexander **DELAPORTE** 开发
-- 授权：**Creative Commons Attribution 4.0 International**（CC BY 4.0）
-- 内容：26,224 组字／转写对（20,276 字）的**中古音转写**（Baxter-Sagart 记法）、反切、音韵地位
-- DOI：[10.5281/zenodo.17349142](https://doi.org/10.5281/zenodo.17349142)
-- 参考：Baxter (1992) *A Handbook of Old Chinese Phonology*；Jacques (2021) *Middle Chinese*
+For scholarly use, cite the original dataset or work alongside any translation used. / 学术使用时，请同时注明原始数据或文献及所用译文。
 
-## 5. 上古音拟音
-
-### 5.1 主要来源：《广韵形声考》
-
-- 来源：古音小镜 <http://www.kaom.net/sgy_bzd.php>
-- 内容：按谐声域组织的「上古音參考」列，本项目取其中的拟音，覆盖 2,963 字
-- 授权：**来源站未明示开放授权**。本项目仅作个人学习与学术展示用途；再分发、商用或二次开发前，**请先与古音小镜站方联系确认**
-- 说明：上古音为拟音，非历史真实读音；同一字在不同体系下拟音不同，引用时请注明体系
-
-### 5.2 补充：Baxter & Sagart (2014)
-
-- 用于《广韵形声考》未收的 200 字，页面上标 `B-S`
-- 来源：Baxter, William H. & Laurent **Sagart** (2014). *Old Chinese: A New Reconstruction*. Oxford University Press（官方补充材料）
-- 授权：**CC BY 4.0**
-
-## 6. 明确未采用的来源（供参考）
-
-| 来源 | 未采用原因 |
-|---|---|
-| 小學堂文字學資料庫（中研院/台大） | 字形图片虽为 CC0，但**字音数据的授权官方声明"仍在研议中"**，且下载页受访问限制 |
-| 汉典 zdic.net | 授权口径不一（官网条款页称 CC0，维基百科指出字典部分实际为 CC BY-NC-ND 2.5），商业使用有风险 |
-| 季旭昇《说文新证》 | 有版权的现代专著，且 OCR 质量不佳；本页「古文字纠正」条目为据古文字字形事实自行撰写 |
-
----
-
-## 引用建议
-
-学术使用请引用上述**原始来源**，而非本页面：
-
-```
-Baxter, W. H. & Sagart, L. (2014). Old Chinese: A New Reconstruction. Oxford University Press.
-Jacques, G. & Delaporte, A. PHONO-ML Database. CRLAO, CNRS. https://doi.org/10.5281/zenodo.17349142
-許慎撰、徐鉉校定《說文解字》. 数据来源：shuowen.org
-```
+> 許慎撰、徐鉉校定《說文解字》；数据来源：shuowen.org。
